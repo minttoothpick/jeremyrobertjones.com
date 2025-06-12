@@ -104,7 +104,7 @@ body {
   background: var(--color-light);
   color: var(--color-dark);
   padding: 2em;
-  font-family: Georgia, serif;
+  font-family: 'Wittgenstein', Georgia, serif;
   font-size: var(--size-step-0);
   line-height: 1.7;
 }
@@ -115,6 +115,7 @@ h3 {
   font-family: Inter, sans-serif;
   font-weight: 800;
   line-height: 1.1;
+  text-wrap: balance;
 }
 
 h1 {
@@ -148,6 +149,11 @@ a {
   text-underline-offset: 0.3ex;
 }
 
+code, pre {
+  font-family: 'Fira Code', monospace;
+  font-size: 0.9em;
+}
+
 /**
  * Flow
  */
@@ -170,7 +176,8 @@ a {
  * Line lengths
  */
 
-article > * {
+article {
+  margin-inline: auto;
   max-width: 65ch;
 }
 
@@ -190,9 +197,11 @@ h3 {
 /**
  * Lede/intro paragraph
  */
+
 .lede {
   font-size: var(--size-step-1);
   font-style: italic;
+  text-wrap: balance;
   max-width: 50ch;
 }
 
