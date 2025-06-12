@@ -10,6 +10,8 @@ A while back when I was first putting this website together (wow, um, that was e
 3. Images with various aspect ratios are scaled proportionally to each other and together take up the full width of the row; and
 4. All the images display at the same height, with their widths adjusting to maintain the aspect ratios.
 
+> Example blockquote right here!
+
 Like this: {image of my desired result}
 
 I thought this would be a *cinch* with CSS right out of the (flex)box, but after fiddling with combinations of `flex` and `object-fit` values, I realized it was less intuitive than I assumed.
