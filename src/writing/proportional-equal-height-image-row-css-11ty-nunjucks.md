@@ -1,5 +1,6 @@
 ---
 title: Creating proportional, equal-height flexible image rows with CSS, 11ty, and Nunjucks
+layout: layouts/page.njk
 ---
 A while back when I was first putting this website together (wow, um, that was eight years ago, actually) I came across a surprisingly tricky image layout issue in CSS. I wanted a fluid, flexible, responsive image row component where:
 

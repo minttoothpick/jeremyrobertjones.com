@@ -1,4 +1,7 @@
 module.exports = (eleventyConfig) => {
+
+  eleventyConfig.addPassthroughCopy("src/css");
+
   return {
     markdownTemplateEngine: "njk",
     dataTemplateEngine: "njk",
@@ -8,4 +11,5 @@ module.exports = (eleventyConfig) => {
       output: "dist",
     },
   };
+
 };
