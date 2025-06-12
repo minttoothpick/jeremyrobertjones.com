@@ -1,9 +1,9 @@
 ---
 title: "Creating proportional, equal-height flexible image rows with CSS, 11ty, and Nunjucks"
 layout: layouts/page.njk
-lede: " A while back when I was first putting this website together (wow, um, that was eight years ago, actually) I came across a surprisingly tricky image layout issue in CSS. I wanted a fluid, flexible, responsive image row component where: Creating a row of images that stay equal in height while preserving their proportions is a common but surprisingly tricky web design challenge. In this tutorial, I’ll show you how to solve it using CSS, Eleventy, and Nunjucks—resulting in flexible, responsive image rows that look great on any device."
+lede: "Creating a row of images that display at equal height while preserving their proportions is a surprisingly tricky web design challenge. In this tutorial, I’ll show you how to solve it using CSS, Eleventy, and Nunjucks—resulting in flexible, responsive image rows that look great on any device."
 ---
-A while back when I was first putting this website together (wow, um, that was eight years ago, actually) I came across a surprisingly tricky image layout issue in CSS. I wanted a fluid, flexible, responsive image row component where:
+A while back when I was first putting this website together (wow, um, that was eight years ago, actually) I came across an unexpectedly challenging image layout issue in CSS. I wanted a fluid, flexible, responsive image row component where:
 
 1. The images display in a single horizontal row without wrapping or overflowing;
 2. The entire row width is fluid; it expands or shrinks to fill the width of its parent container;
@@ -126,13 +126,11 @@ We will create a Nunjucks shortcode that:
 The shortcode looks like this:
 
 ```njk
-{% raw %}
-{% imageRow [
+{% raw %}{% imageRow [
   { src: "one.jpg", alt: "Alt text" },
   { src: "two.jpg", alt: "Alt text" },
   { src: "three.jpg", alt: "Alt text" }
-], "Optional caption." %}
-{% endraw %}
+], "Optional caption." %}{% endraw %}
 ```
 
 Here's what I have in my `.eleventy.js` file:

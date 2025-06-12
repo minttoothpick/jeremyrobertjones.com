@@ -84,6 +84,7 @@ select {
 
 :root {
   --color-dark: #252525;
+  --color-medium: #ddd;
   --color-light: #efefef;
   --color-primary: #1a8fe3;
 
@@ -98,6 +99,10 @@ select {
   --size-step-2: clamp(1.56rem, calc(1.41rem + 0.76vw), 2rem);
   --size-step-3: clamp(1.95rem, calc(1.71rem + 1.24vw), 2.66rem);
   --size-step-4: clamp(2.44rem, calc(2.05rem + 1.93vw), 3.55rem);
+}
+
+html {
+  font-size: 110%;
 }
 
 body {
@@ -149,9 +154,24 @@ a {
   text-underline-offset: 0.3ex;
 }
 
-code, pre {
-  font-family: 'Fira Code', monospace;
+code,
+code[class*="language-"],
+pre[class*="language-"] {
+  font-family: 'Fira Code', Consolas, Monaco, 'Andale Mono', monospace;
   font-size: 0.9em;
+  border-radius: 3px;
+}
+
+pre[class*="language-"] {
+  margin-inline: -1em;
+}
+
+code:not([class*="language-"]) {
+  font-family: monospace, monospace;
+  background-color: var(--color-medium);
+  color: var(--color-dark);
+  padding: 0.1em 0.2em;
+  white-space: nowrap;
 }
 
 /**
