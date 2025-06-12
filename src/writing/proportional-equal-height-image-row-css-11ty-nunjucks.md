@@ -93,7 +93,7 @@ Using `srcset` and `sizes` lets the browser choose the appropriate image size, b
 
 With the flexbox technique I'm using, an image's width is dependent on the size of its neighbors, so I can't predict if a given image will be 50% of the viewport, or 10%, or any other value.
 
-This is where the [lazysizes JavaScript library](https://github.com/aFarkas/lazysizes) comes to the rescue. (You can grab it from a CDN here: ) It offers a handy feature: `data-sizes="auto"`.
+This is where the [**lazysizes** JavaScript library](https://github.com/aFarkas/lazysizes) comes to the rescue. It offers a handy feature: `data-sizes="auto"`.
 
 After generating a few different sizes for each image and adding them to the `data-srcset` attribute, lazysizes can calculate the `sizes` attribute based on the current display width of the image. The browser can then select the best image from the `srcset`. Woohoo!
 
@@ -103,11 +103,11 @@ Here's a basic implementation with lazysizes:
 <div class="fluid-row">
   <div class="fluid-row__item" style="--aspect-ratio: 1.5;">
     <img
-      data-srcset="landscape-300.jpg 300w, landscape-600.jpg 600w, landscape-900.jpg 900w"
+      data-srcset="image-300.jpg 300w, image-600.jpg 600w, image-900.jpg 900w"
       data-sizes="auto"
       class="lazyload"
-      src="landscape-tiny.jpg"
-      alt="Landscape image">
+      src="image-tiny.jpg"
+      alt="My image">
   </div>
   <!-- more images... -->
 </div>
@@ -127,7 +127,7 @@ We will create a Nunjucks shortcode that:
 
 The shortcode looks like this:
 
-```njk
+```liquid
 {% raw %}{% imageRow [
   { src: "one.jpg", alt: "Alt text" },
   { src: "two.jpg", alt: "Alt text" },

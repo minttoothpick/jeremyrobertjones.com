@@ -217,7 +217,7 @@ code:not([class*="language-"]) {
 
 article {
   margin-inline: auto;
-  max-width: 65ch;
+  max-width: 60ch;
 }
 
 blockquote {
