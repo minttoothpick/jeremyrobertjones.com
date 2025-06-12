@@ -88,6 +88,14 @@ select {
   --color-light: #efefef;
   --color-primary: #1a8fe3;
 
+  /* https://coolors.co/45062e-7f055f-e5a4cb-ebd2be-ffe8d4 */
+  --color-black: #1D0214;
+  --color-dark: #45062E;
+  --color-white: #F3ECE6;
+  --color-white-dark: #E8DACE;
+  --color-primary: #E5A4CB;
+  --color-primary-dark: #7F055F;
+
   /* --size-step-0: 1rem;
   --size-step-1: 1.25rem;
   --size-step-2: 1.56rem;
@@ -106,8 +114,8 @@ html {
 }
 
 body {
-  background: var(--color-light);
-  color: var(--color-dark);
+  background: var(--color-white);
+  color: var(--color-black);
   padding: 2em;
   font-family: 'Wittgenstein', Georgia, serif;
   font-size: var(--size-step-0);
@@ -117,7 +125,7 @@ body {
 h1,
 h2,
 h3 {
-  font-family: Inter, sans-serif;
+  font-family: sans-serif;
   font-weight: 800;
   line-height: 1.1;
   text-wrap: balance;
@@ -152,6 +160,11 @@ a {
   text-decoration-color: var(--color-primary);
   text-decoration-thickness: 0.3ex;
   text-underline-offset: 0.3ex;
+  transition: all 0.2s ease-out;
+}
+
+a:hover {
+  text-decoration-color: #7F055F;
 }
 
 code,
@@ -168,7 +181,7 @@ pre[class*="language-"] {
 
 code:not([class*="language-"]) {
   font-family: monospace, monospace;
-  background-color: var(--color-medium);
+  background-color: var(--color-white-dark);
   color: var(--color-dark);
   padding: 0.1em 0.2em;
   white-space: nowrap;
