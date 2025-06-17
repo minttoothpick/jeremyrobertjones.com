@@ -203,7 +203,7 @@ eleventyConfig.addNunjucksAsyncShortcode("imageRow", async function(images, capt
 
 Let's walk through this bit by bit.
 
-**Include plugins**
+### Include plugins
 
 ```js
 const Image = require("@11ty/eleventy-img");
@@ -214,7 +214,7 @@ Include the Eleventy Image plugin and `path` (this is available by default throu
 
 You can also put these two lines at the very top of `.eleventy.js`.
 
-**Define the shortcode and path variables**
+### Define the shortcode and path variables
 
 ```js
 eleventyConfig.addNunjucksAsyncShortcode("imageRow", async function(images, caption = "") {
@@ -227,7 +227,7 @@ This registers the shortcode for use in Nunjucks templates. The parameters accep
 
 I'm also declaring variables to define where my source images are stored, where processed images will be saved, and the URL path to use in the generated HTML. You'll want to adjust these to match your project's directory structure.
 
-**Process each image asynchronously**
+### Process each image asynchronously
 
 ```js
 const imageData = await Promise.all(
@@ -237,7 +237,7 @@ const imageData = await Promise.all(
 
 For each image, we construct the full path to the source file.
 
-**Use Eleventy Image plugin to process the images**
+### Use Eleventy Image plugin to process the images
 
 ```js
 const metadata = await Image(fullImagePath, {
@@ -254,7 +254,7 @@ const metadata = await Image(fullImagePath, {
 
 Here, we choose the different pixel widths and formats to generate for each image, set the paths, and rename them in a human-readable filename format.
 
-**Collect image metadata**
+### Collect image metadata
 
 ```js
 const data = metadata.jpeg;
@@ -269,7 +269,7 @@ return {
 
 This constructs the `srcset`, uses the dimensions of the largest source image to calculate the aspect ratio, and sets the smallest image as our placeholder.
 
-**Build the HTML output**
+### Build the HTML output
 
 ```js
 const captionHtml = caption ? `<figcaption class="text-small">${caption}</figcaption>` : "";
@@ -297,7 +297,7 @@ return `<figure class="flow-condensed">
 
 Construct the HTML, including the attributes for lazysizes.
 
-**Handle errors**
+### Handle errors
 
 ```js
 } catch (error) {
