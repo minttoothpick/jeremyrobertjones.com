@@ -4,12 +4,11 @@
   <a href="/"><img class="site-head__logo" src="/images/logo.png" alt="Jeremy Robert Jones"></a>
   <nav class="nav site-head__nav" aria-label="Primary">
     <ul class="nav__list">
+      {% for item in navigation.items %}
       <li>
-        <a href="/">Home</a>
+        <a href="{{ item.url }}">{{ item.text }}</a>
       </li>
-      <li>
-        <a href="/blog">Blog</a>
-      </li>
+      {% endfor %}
     </ul>
   </nav>
 </header>
