@@ -3,7 +3,6 @@ title: 'Creating proportional, equal-height flexible image rows with CSS, 11ty, 
 date: '2025-06-15'
 tags: ['technical']
 subTags: ['CSS', '11ty', 'Tutorial']
-layout: layouts/page
 lede: 'Creating a row of images that display at equal height while preserving their proportions is a surprisingly tricky web design challenge. In this tutorial, I’ll show you how to solve it using CSS, Eleventy, and Nunjucks—resulting in flexible, responsive image rows that look great on any device.'
 ---
 A while back when I was first putting this website together (wow, um, that was eight years ago, actually) I came across an unexpectedly challenging image layout issue in CSS. I wanted a fluid, flexible, responsive image row component where:
