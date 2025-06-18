@@ -1,5 +1,7 @@
 ---
 title: 'Creating proportional, equal-height flexible image rows with CSS, 11ty, and Nunjucks'
+date: '2025-06-15'
+tags: ['CSS', '11ty', 'Tutorial']
 layout: layouts/page.njk
 lede: 'Creating a row of images that display at equal height while preserving their proportions is a surprisingly tricky web design challenge. In this tutorial, I’ll show you how to solve it using CSS, Eleventy, and Nunjucks—resulting in flexible, responsive image rows that look great on any device.'
 ---
