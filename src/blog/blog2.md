@@ -1,6 +1,6 @@
 ---
 title: 'Another blog post'
-date: '2025-06-10'
+date: '2024-08-22'
 tags: ['personal']
 subTags: ['CSS', '11ty', 'Tutorial']
 lede: 'Hooray for all of this.'

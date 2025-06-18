@@ -308,3 +308,28 @@ h3 {
 .nav__item > a[data-state="active"] {
   font-weight: bold;
 }
+
+/**
+ * Post list
+ */
+
+.post-list__title {
+  font-weight: 700;
+}
+
+/**
+ * Articles (sorta)
+ */
+
+time {
+  display: block;
+  font-size: var(--size-step-0);
+}
+
+
+
+.tags-list {
+  list-style-type: none;
+  padding-inline-start: 0;
+  font-size: var(--size-step-0);
+}
