@@ -188,6 +188,10 @@ a:hover {
   --flow-space: 0.5em;
 }
 
+main {
+  padding-top: 2.5em;
+}
+
 /**
  * Code
  */
@@ -298,4 +302,9 @@ h3 {
 
 .nav__list > * {
   padding-inline-start: 1rem;
+}
+
+.nav__item > a[aria-current="page"],
+.nav__item > a[data-state="active"] {
+  font-weight: bold;
 }
