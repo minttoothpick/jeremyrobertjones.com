@@ -1,9 +1,9 @@
 {% if postListHeadline %}
   <h2>{{ postListHeadline }}</h2>
 {% endif %}
-<ol class="post-list flow" style="--flow-space: 1.5em;" reversed>
+<ol class="post-list flow" reversed>
   {% for item in postListItems %}
-    <li class="post-list__item">
+    <li class="post-list__item flow">
       <a href="{{ item.url }}" class="post-list__title">{{ item.data.title }}</a>
       <time datetime="{{ item.data.date | dateFilterW3 }}">{{ item.data.date | dateFilter }}</time>
       {% if item.data.blurb %}

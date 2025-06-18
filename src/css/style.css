@@ -318,6 +318,14 @@ h3 {
   font-weight: 700;
 }
 
+.post-list__item {
+  --flow-space: 1.5em;
+}
+
+.post-list__item > * {
+  --flow-space: .25em;
+}
+
 /**
  * Articles (sorta)
  */
