@@ -1,11 +1,31 @@
 {% extends "layouts/base.njk" %}
 
-{% block content %}
-<article class="flow">
-  <h1>{{ title }}</h1>
-  {% if lede %}
-    <p class="lede">{{ lede }}</p>
+{% set pageHeaderTitle = title %}
+
+{# Render post date and any tags that this post has been filed under #}
+{% set pageHeaderSummary %}
+  <time datetime="{{ date | dateFilterW3 }}">{{ date | dateFilter }}</time>
+  {% if tags %}
+    <p class="visually-hidden" id="tags-desc">Tags that this post has been filed under.</p>
+    <ul class="tags-list" aria-describedby="tags-desc">
+      {% for tag in tags %}
+        <li>
+          <a href="/tag/{{ tag | slugify }}/">#{{ tag | title | replace(' ', '') }}</a>
+        </li>
+      {% endfor %}
+    </ul>
   {% endif %}
-  {{ content | safe }}
-</article>
+{% endset %}
+
+{% block content %}
+  <article class="flow">
+    {% include "partials/page-header.njk" %}
+
+    <div class="page-content flow">
+      {% if lede %}
+        <p class="lede">{{ lede }}</p>
+      {% endif %}
+      {{ content | safe }}
+    </div>
+  </article>
 {% endblock %}
