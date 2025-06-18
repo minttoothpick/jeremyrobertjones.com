@@ -120,7 +120,7 @@ body {
   color: var(--color-black);
   padding: 2em;
   /* font-family: 'Wittgenstein', Georgia, serif; */
-  font-family: sans-serif;
+  font-family: 'Barlow', sans-serif;
   font-size: var(--size-step-1);
   line-height: 1.7;
 }
@@ -130,7 +130,7 @@ h2,
 h3 {
   /* font-family: 'Wittgenstein', Georgia, serif; */
   font-weight: 700;
-  line-height: 1.1;
+  line-height: 1.2;
   text-wrap: balance;
 }
 
