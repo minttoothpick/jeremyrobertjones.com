@@ -3,9 +3,6 @@
 {% block content %}
 <article class="flow">
   <h1>{{ title }}</h1>
-  {% if lede %}
-    <p class="lede">{{ lede }}</p>
-  {% endif %}
   {{ content | safe }}
 </article>
 {% endblock %}

@@ -4,19 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ title }}</title>
-  <link rel="stylesheet" href="/css/prism-tomorrow.css">
-  <link rel="stylesheet" href="/css/style.css">
   <link rel="preconnect" href="https://fonts.bunny.net">
   <link href="https://fonts.bunny.net/css?family=fira-code:400|wittgenstein:400,400i,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/prism-tomorrow.css">
+  <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-  <header style="display: flex; justify-content: center;">
-    <img src="/images/logo.png" alt="Jeremy Robert Jones" style="max-width: 400px;">
-    <nav>
-      <ul>
-      </ul>
-    </nav>
-  </header>
-  {% block content %}{% endblock %}
+  {% include "partials/site-head.html" %}
+  <main tabindex="-1" id="main-content">{% block content %}{% endblock %}</main>
 </body>
 </html>

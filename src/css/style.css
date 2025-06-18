@@ -160,13 +160,13 @@ blockquote {
 a {
   color: currentColor;
   text-decoration-color: var(--color-primary);
-  text-decoration-thickness: 0.3ex;
+  text-decoration-thickness: 0.25ex;
   text-underline-offset: 0.3ex;
-  transition: all 0.2s ease-out;
+  transition: text-decoration-color 0.2s ease-out;
 }
 
 a:hover {
-  text-decoration-color: #7F055F;
+  text-decoration-color: var(--color-primary-dark);
 }
 
 /**
@@ -249,4 +249,52 @@ h3 {
 
 .lede + * {
   --flow-space: 2em;
+}
+
+/**
+ * Skip nav
+ */
+
+.skip-link:not(:focus), .visually-hidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: auto;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  white-space: nowrap;
+}
+
+/**
+ * Header
+ */
+
+/* .site-head {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+} */
+
+.site-head__logo {
+  max-width: 400px;
+  margin-inline: auto;
+}
+
+/**
+ * Nav
+ */
+
+.nav__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.nav__list > * {
+  padding-inline-start: 1rem;
 }
