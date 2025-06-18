@@ -4,16 +4,14 @@ date: '2025-06-15'
 tags: ['technical']
 subTags: ['CSS', '11ty', 'Tutorial']
 blurb: 'Learn how I built a flexible, fluid image row component (including a Nunjucks shortcode).'
-lede: 'Creating a row of images that display at equal height while preserving their proportions is a surprisingly tricky web design challenge. In this tutorial, I’ll show you how to solve it using CSS, Eleventy, and Nunjucks—resulting in flexible, responsive image rows that look great on any device.'
+lede: 'Creating a row of images that display at equal height while preserving their proportions is a surprisingly tricky web design challenge. Here’s how I solved it using CSS, Eleventy, and Nunjucks.'
 ---
-A while back when I was first putting this website together (wow, um, that was eight years ago, actually) I came across an unexpectedly challenging image layout issue in CSS. I wanted a fluid, flexible, responsive image row component where:
+A while back I came across an unexpectedly challenging image layout issue in CSS. I wanted to create a fluid, flexible, responsive image row where:
 
 1. The images display in a single horizontal row without wrapping or overflowing;
 2. The entire row width is fluid; it expands or shrinks to fill the width of its parent container;
 3. Images with various aspect ratios are scaled proportionally to each other and together take up the full width of the row; and
 4. All the images display at the same height, with their widths adjusting to maintain the aspect ratios.
-
-> Example blockquote right here!
 
 Like this: {image of my desired result}
 
