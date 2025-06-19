@@ -1,3 +1,4 @@
+const rssPlugin = require('@11ty/eleventy-plugin-rss');
 const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 const dateFilter = require('./src/filters/date-filter.js');
 const dateFilterW3 = require('./src/filters/date-filter-w3.js');
@@ -18,10 +19,12 @@ module.exports = (eleventyConfig) => {
    */
 
   eleventyConfig.addPlugin(syntaxHighlight);
+  eleventyConfig.addPlugin(rssPlugin);
 
   /**
    * Filters
    */
+
   eleventyConfig.addFilter('dateFilter', dateFilter);
   eleventyConfig.addFilter('dateFilterW3', dateFilterW3);
 

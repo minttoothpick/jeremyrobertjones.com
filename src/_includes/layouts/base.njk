@@ -10,9 +10,20 @@
   <link href="https://fonts.bunny.net/css?family=encode-sans:400,400i,700,700i&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/css/prism-tomorrow.css">
   <link rel="stylesheet" href="/css/style.css">
+  <link rel="alternate" type="application/rss+xml" href="{{ site.url }}/feed.xml" />
 </head>
 <body class="flow">
   {% include "partials/site-head.njk" %}
   <main tabindex="-1" id="main-content">{% block content %}{% endblock %}</main>
+
+  <footer>
+    <nav class="nav site-footer__nav" aria-label="Footer">
+      <ul class="nav__list">
+        <li class="nav__item">
+          <a href="/feed.xml">RSS</a>
+        </li>
+      </ul>
+    </nav>
+  </footer>
 </body>
 </html>
