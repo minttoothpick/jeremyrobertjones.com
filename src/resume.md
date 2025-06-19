@@ -6,7 +6,7 @@ layout: layouts/post
 
 ### Web Manager / Public Affairs Specialist,<br> <span style="font-weight: normal;">USDA Forest Service - Northern Research Station & Forest Products Laboratory</span>
 
-2024 – 2025 | Remote
+2024 – 2025 &nbsp;|&nbsp; Remote
 
 - Manage large-scale public websites (Drupal) and intranet (SharePoint), ensuring accessibility, usability, and compliance.
 - Developed automation workflows (Power Automate and UiPath) to streamline content submissions, reminders, and approvals.
@@ -16,7 +16,7 @@ layout: layouts/post
 
 ### Visual Information Specialist,<br> <span style="font-weight: normal;">USDA Forest Service – Southern Research Station</span>
 
-2015 – 2024 | Asheville, NC, USA
+2015 – 2024 &nbsp;|&nbsp; Asheville, NC, USA
 
 - Directed a full redesign of the research station website, with mobile-first, accessible design and improved information architecture.
 - Built PHP-based tools to generate publication citations, enhancing researcher visibility.
