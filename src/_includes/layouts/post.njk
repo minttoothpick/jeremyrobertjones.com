@@ -4,18 +4,22 @@
 
 {# Render post date and any tags that this post has been filed under #}
 {% set pageHeaderSummary %}
-  {% if date %}
-    <time datetime="{{ date | dateFilterW3 }}">{{ date | dateFilter }}</time>
-  {% endif %}
-  {% if tags %}
-    <p class="visually-hidden" id="tags-desc">Tags that this post has been filed under.</p>
-    <ul class="tags-list" aria-describedby="tags-desc">
-      {% for tag in tags %}
-        <li>
-          <a href="/tag/{{ tag | slugify }}/">#{{ tag | replace(' ', '') }}</a>
-        </li>
-      {% endfor %}
-    </ul>
+  {% if date or tags %}
+    <div class="page-header__meta">
+      {% if date %}
+        <time datetime="{{ date | dateFilterW3 }}">{{ date | dateFilter }}</time>
+      {% endif %}
+      {% if tags %}
+        <p class="visually-hidden" id="tags-desc">Tags that this post has been filed under.</p>
+        <ul class="tags-list" aria-describedby="tags-desc">
+          {% for tag in tags %}
+            <li>
+              <a href="/tag/{{ tag | slugify }}/">#{{ tag | replace(' ', '') }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    </div>
   {% endif %}
 {% endset %}
 

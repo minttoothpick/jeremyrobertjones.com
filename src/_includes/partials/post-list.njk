@@ -4,8 +4,8 @@
 <ol class="post-list flow" reversed>
   {% for item in postListItems %}
     <li class="post-list__item flow">
-      <a href="{{ item.url }}" class="post-list__title">{{ item.data.title }}</a>
       <time datetime="{{ item.data.date | dateFilterW3 }}">{{ item.data.date | dateFilter }}</time>
+      <a href="{{ item.url }}" class="post-list__title">{{ item.data.title }}</a>
       {% if item.data.blurb %}
         <p class="post-list__blurb">{{ item.data.blurb }}</p>
       {% endif %}

@@ -120,7 +120,9 @@ body {
   color: var(--color-black);
   padding: 2em;
   /* font-family: 'Wittgenstein', Georgia, serif; */
+  font-family: sans-serif;
   font-family: 'Barlow', sans-serif;
+  /* font-family: 'Encode Sans', sans-serif; */
   font-size: var(--size-step-1);
   line-height: 1.7;
 }
@@ -149,6 +151,7 @@ h3 {
 ul,
 ol {
   padding-inline-start: 1em;
+  margin-block: 0;
 }
 
 blockquote {
@@ -249,6 +252,7 @@ h3 {
   font-size: var(--size-step-2);
   font-style: italic;
   text-wrap: balance;
+  line-height: 1.45;
   max-width: 50ch;
 }
 
@@ -314,7 +318,13 @@ h3 {
  * Post list
  */
 
+.post-list {
+  list-style-type: none;
+  padding-inline-start: 0;
+}
+
 .post-list__title {
+  font-size: var(--size-step-2);
   font-weight: 700;
 }
 
@@ -334,8 +344,6 @@ time {
   display: block;
   font-size: var(--size-step-0);
 }
-
-
 
 .tags-list {
   list-style-type: none;
