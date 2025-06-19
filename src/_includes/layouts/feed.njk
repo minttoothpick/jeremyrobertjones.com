@@ -13,7 +13,9 @@
 {% block content %}
 <article class="flow">
   {% include "partials/page-header.njk" %}
-  {% include "partials/post-list.njk" %}
+  <div style="margin-block-start: 4em;">
+    {% include "partials/post-list.njk" %}
+  </div>
 
   {# If we leave pagination in for tags, the next and prev links will
      link to tags and be rather confusing, so don't render in that situation #}
