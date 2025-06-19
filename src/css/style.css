@@ -128,12 +128,15 @@ body {
 }
 
 h1,
-h2,
-h3 {
+h2 {
   /* font-family: 'Wittgenstein', Georgia, serif; */
   font-weight: 700;
   line-height: 1.2;
   text-wrap: balance;
+}
+
+h3 {
+  line-height: 1.5;
 }
 
 h1 {
@@ -141,11 +144,11 @@ h1 {
 }
 
 h2 {
-  font-size: var(--size-step-4);
+  font-size: var(--size-step-3);
 }
 
 h3 {
-  font-size: var(--size-step-2);
+  font-size: var(--size-step-1);
 }
 
 ul,
@@ -186,8 +189,12 @@ a:hover {
 }
 
 /* Less space between heading's direct sibling */
-:is(h1, h2, h3) + * {
+:is(h1, h2) + * {
   --flow-space: 0.5em;
+}
+
+:is(h3) + * {
+  --flow-space: 0.25em;
 }
 
 main {
@@ -227,6 +234,10 @@ article {
   max-width: 60ch;
 }
 
+article.resume {
+  max-width: 80ch;
+}
+
 blockquote {
   max-width: 50ch;
 }
@@ -240,7 +251,7 @@ h2 {
 }
 
 h3 {
-  max-width: 50ch;
+  max-width: 60ch;
 }
 
 /**

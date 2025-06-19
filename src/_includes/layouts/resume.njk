@@ -1,0 +1,43 @@
+{% extends "layouts/base.njk" %}
+
+{% set pageHeaderTitle = title %}
+
+{% block content %}
+  <style>
+    .resume-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 2em;
+    }
+  </style>
+  <article class="resume flow">
+    {% include "partials/page-header.njk" %}
+
+    <div class="resume-grid">
+      <div class="main flow">
+        {{ content | safe }}
+      </div>
+
+      <aside class="flow">
+        <h2>Skills</h2>
+        {% for skill in skills %}
+          {% for key, values in skill %}
+            <h3>{{ key }}</h3>
+            {% for value in values %}
+              <p>{{ value }}</p>
+            {% endfor %}
+          {% endfor %}
+        {% endfor %}
+        <h2>Education</h2>
+        {% for ed in education %}
+          {% for key, values in ed %}
+            <h3>{{ key }}</h3>
+            {% for value in values %}
+              <p>{{ value }}</p>
+            {% endfor %}
+          {% endfor %}
+        {% endfor %}
+      </aside>
+    </div>
+  </article>
+{% endblock %}
