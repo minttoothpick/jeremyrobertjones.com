@@ -8,3 +8,4 @@ npm-debug.*
 .cache
 node_modules
 dist
+_designing
