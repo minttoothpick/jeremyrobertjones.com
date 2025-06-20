@@ -371,9 +371,10 @@ time {
  */
 
 .site-footer {
-  max-width: 80ch;
+  max-width: 60ch;
   margin-inline: auto;
-  display: flex;
+  text-align: center;
+  /* display: flex; */
   margin-block-start: 3em;
-  gap: 0.5em;
+  /* gap: 0.5em; */
 }
