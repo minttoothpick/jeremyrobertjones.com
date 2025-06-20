@@ -365,3 +365,15 @@ time {
   padding-inline-start: 0;
   font-size: var(--size-step-0);
 }
+
+/**
+ * Footer
+ */
+
+.site-footer {
+  max-width: 80ch;
+  margin-inline: auto;
+  display: flex;
+  margin-block-start: 3em;
+  gap: 0.5em;
+}

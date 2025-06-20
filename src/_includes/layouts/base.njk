@@ -16,11 +16,24 @@
   {% include "partials/site-head.njk" %}
   <main tabindex="-1" id="main-content">{% block content %}{% endblock %}</main>
 
-  <footer>
-    <nav class="nav site-footer__nav" aria-label="Footer">
+  <footer class="site-footer">
+    <p>Thanks for visiting! More links:</p>
+    <nav class="nav site-footer__nav" aria-label="Secondary navigation">
       <ul class="nav__list">
         <li class="nav__item">
-          <a href="/feed.xml">RSS</a>
+          <a href="https://github.com/minttoothpick">GitHub</a>
+        </li>
+        <li class="nav__item">
+          <a href="https://www.linkedin.com/in/jeremy-robert-jones/">LinkedIn</a>
+        </li>
+        <li class="nav__item">
+          <a href="https://pixelfed.social/minttoothpick">Pixelfed</a>
+        </li>
+        <li class="nav__item">
+          <a href="https://bsky.app/profile/minttoothpick.bsky.social">Bluesky</a>
+        </li>
+        <li class="nav__item">
+          <a href="/feed.xml">RSS Feed</a>
         </li>
       </ul>
     </nav>
