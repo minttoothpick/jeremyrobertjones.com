@@ -5,7 +5,7 @@
 {# Render post date and any tags that this post has been filed under #}
 {% set pageHeaderSummary %}
   {% if date or tags %}
-    <div class="page-header__meta">
+    <div class="page-header__meta flow">
       {% if date %}
         <time datetime="{{ date | dateFilterW3 }}">{{ date | dateFilter }}</time>
       {% endif %}

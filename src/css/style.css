@@ -350,12 +350,17 @@ h3 {
  * Articles (sorta)
  */
 
+.post__feature-image + h1 {
+  --flow-space: 0.25em;
+}
+
 time {
   display: block;
   font-size: var(--size-step-0);
 }
 
 .tags-list {
+  --flow-space: 0.25em;
   list-style-type: none;
   padding-inline-start: 0;
   font-size: var(--size-step-0);

@@ -1,6 +1,9 @@
 ---
 title: 'Creating proportional, equal-height image rows with CSS, 11ty, and Nunjucks'
 date: '2025-06-15'
+featureImage:
+  url: '/images/row-of-picture-frames.svg'
+  alt: 'Three picture frames in a row'
 tags: ['technical']
 subTags: ['CSS', '11ty', 'Tutorial']
 blurb: 'Learn how I built a flexible, fluid image row component (including a Nunjucks shortcode).'
