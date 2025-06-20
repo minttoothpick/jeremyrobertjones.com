@@ -4,10 +4,18 @@
 
 {% block content %}
   <style>
-    .resume-grid {
-      display: grid;
-      grid-template-columns: 2fr 1fr;
-      gap: 2em;
+    .skills {
+      margin-block-start: 1.5em;
+    }
+    @media (min-width: 800px) {
+      .resume-grid {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 2em;
+      }
+      .skills {
+        margin-block-start: 0;
+      }
     }
   </style>
   <article class="resume flow">
@@ -19,7 +27,7 @@
       </div>
 
       <aside class="flow">
-        <h2>Skills</h2>
+        <h2 class="skills">Skills</h2>
         {% for skill in skills %}
           {% for key, values in skill %}
             <h3>{{ key }}</h3>
