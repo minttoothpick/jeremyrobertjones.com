@@ -1,4 +1,7 @@
 <div class="page-header flow">
+  {% if featureImage %}
+    <img class="post__feature-image" src="{{ featureImage.url }}" alt="{{ featureImage.alt }}">
+  {% endif %}
   <h1>{{ pageHeaderTitle }}</h1>
   {% if pageHeaderSummary %}
     {{ pageHeaderSummary | safe }}
