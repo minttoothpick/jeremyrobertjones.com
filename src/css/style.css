@@ -25,8 +25,8 @@ dd {
 }
 
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
-ul[role='list'],
-ol[role='list'] {
+ul[role="list"],
+ol[role="list"] {
   list-style: none;
 }
 
@@ -65,7 +65,7 @@ select {
 /* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
 @media (prefers-reduced-motion: reduce) {
   html:focus-within {
-   scroll-behavior: auto;
+    scroll-behavior: auto;
   }
 
   *,
@@ -89,12 +89,12 @@ select {
   --color-primary: #1a8fe3;
 
   /* https://coolors.co/45062e-7f055f-e5a4cb-ebd2be-ffe8d4 */
-  --color-black: #1D0214;
-  --color-dark: #45062E;
-  --color-white: #F3ECE6;
-  --color-white-dark: #E8DACE;
-  --color-primary: #E5A4CB;
-  --color-primary-dark: #7F055F;
+  --color-black: #1d0214;
+  --color-dark: #45062e;
+  --color-white: #f3ece6;
+  --color-white-dark: #e8dace;
+  --color-primary: #e5a4cb;
+  --color-primary-dark: #7f055f;
 
   /* --size-step-0: 1rem;
   --size-step-1: 1.25rem;
@@ -121,7 +121,7 @@ body {
   padding: 2em;
   /* font-family: 'Wittgenstein', Georgia, serif; */
   font-family: sans-serif;
-  font-family: 'Barlow', sans-serif;
+  font-family: "Barlow", sans-serif;
   /* font-family: 'Encode Sans', sans-serif; */
   font-size: var(--size-step-1);
   line-height: 1.7;
@@ -208,7 +208,7 @@ main {
 code,
 code[class*="language-"],
 pre[class*="language-"] {
-  font-family: 'Fira Code', Consolas, Monaco, 'Andale Mono', monospace;
+  font-family: "Fira Code", Consolas, Monaco, "Andale Mono", monospace;
   font-size: 0.9em;
   border-radius: 3px;
 }
@@ -274,7 +274,8 @@ h3 {
  * Skip nav
  */
 
-.skip-link:not(:focus), .visually-hidden {
+.skip-link:not(:focus),
+.visually-hidden {
   border: 0;
   clip: rect(0 0 0 0);
   height: auto;
@@ -297,6 +298,7 @@ h3 {
 } */
 
 .site-head__logo {
+  width: 100%;
   max-width: 400px;
   margin-inline: auto;
 }
@@ -343,7 +345,7 @@ h3 {
 }
 
 .post-list__item > * {
-  --flow-space: .25em;
+  --flow-space: 0.25em;
 }
 
 /**
@@ -377,4 +379,29 @@ time {
   /* display: flex; */
   margin-block-start: 3em;
   /* gap: 0.5em; */
+}
+
+/**
+ * Flexible image row
+ */
+
+.imageRow {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap, 1em);
+}
+
+.imageRow img {
+  width: 100%;
+}
+
+@media (min-width: 600px) {
+  .imageRow {
+    flex-direction: row;
+  }
+
+  .imageRow__item {
+    flex: var(--aspect-ratio);
+    min-width: 0; /* Prevents flex items from overflowing */
+  }
 }
