@@ -2,7 +2,15 @@
 
 {% block content %}
 <article class="flow">
-  {# <h1>{{ title }}</h1> #}
   {{ content | safe }}
 </article>
+
+<div class="wrapper">
+  {% set postListHeadline = "My latest blog posts" %}
+  {% set postListItems = collections.blog | limit(3) %}
+  <div style="margin-block-start: 3.5em;">
+    {% include "partials/post-list.njk" %}
+  </div>
+  <p><a href="/blog/">View all posts →</a></p>
+</div>
 {% endblock %}
