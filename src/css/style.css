@@ -229,6 +229,7 @@ code:not([class*="language-"]) {
  * Line lengths
  */
 
+.wrapper,
 article {
   margin-inline: auto;
   max-width: 60ch;
