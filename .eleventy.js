@@ -48,6 +48,9 @@ module.exports = (eleventyConfig) => {
 
   eleventyConfig.addPassthroughCopy("src/css");
   eleventyConfig.addPassthroughCopy("src/images");
+  eleventyConfig.addPassthroughCopy({
+    "src/images/favicon/*": "/",
+  });
 
   return {
     markdownTemplateEngine: "njk",
