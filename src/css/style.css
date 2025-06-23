@@ -312,7 +312,7 @@ h3 {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 1em;
+  gap: 0.25em 1em;
   padding: 0;
   margin: 0;
   list-style: none;
