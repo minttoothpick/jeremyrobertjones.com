@@ -385,23 +385,27 @@ time {
  * Flexible image row
  */
 
-.imageRow {
+.image-row {
   display: flex;
   flex-direction: column;
   gap: var(--gap, 1em);
 }
 
-.imageRow img {
+.image-row > img {
   width: 100%;
 }
 
 @media (min-width: 600px) {
-  .imageRow {
+  .image-row {
     flex-direction: row;
   }
 
-  .imageRow__item {
+  .image-row > img {
     flex: var(--aspect-ratio);
-    min-width: 0; /* Prevents flex items from overflowing */
   }
+}
+
+figcaption {
+  font-size: var(--size-step-0);
+  margin-block-start: var(--size-step-0);
 }
