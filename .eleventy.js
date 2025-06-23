@@ -32,6 +32,9 @@ module.exports = (eleventyConfig) => {
 
   eleventyConfig.addFilter("dateFilter", dateFilter);
   eleventyConfig.addFilter("dateFilterW3", dateFilterW3);
+  eleventyConfig.addNunjucksFilter("limit", (arr, limit) =>
+    arr.slice(0, limit)
+  );
 
   /**
    * Shortcodes
