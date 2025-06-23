@@ -72,7 +72,7 @@ Here's a basic implementation:
 }
 ```
 
-See [Equal height flexible image row 2: solution](https://codepen.io/minttoothpick/pen/NPWwBBb) on Codepen.
+See [Equal-height flexible image row 2: solution](https://codepen.io/minttoothpick/pen/NPWwBBb) on Codepen.
 
 ## How the CSS works
 
@@ -326,5 +326,11 @@ Construct the HTML, including the attributes for lazysizes.
 ```
 
 Return an error in the console and HTML if we run into any issues.
+
+## Wrapping up
+
+**And that's it!** You now have a flexible, responsive image row component that automatically calculates aspect ratios and generates optimized images. The shortcode handles all the heavy lifting - just pass in your images and an optional caption. Good times.
+
+You can [view the code on GitHub](https://github.com/minttoothpick/jeremyrobertjones.com/blob/main/src/shortcodes/imageRow.js) if you want to adapt it for your own project!
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js" async></script>
