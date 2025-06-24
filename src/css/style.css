@@ -25,8 +25,8 @@ dd {
 }
 
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
-ul[role="list"],
-ol[role="list"] {
+ul[role='list'],
+ol[role='list'] {
   list-style: none;
 }
 
@@ -121,7 +121,7 @@ body {
   padding: 2em;
   /* font-family: 'Wittgenstein', Georgia, serif; */
   font-family: sans-serif;
-  font-family: "Barlow", sans-serif;
+  font-family: 'Barlow', sans-serif;
   /* font-family: 'Encode Sans', sans-serif; */
   font-size: var(--size-step-1);
   line-height: 1.6;
@@ -206,18 +206,18 @@ main {
  */
 
 code,
-code[class*="language-"],
-pre[class*="language-"] {
-  font-family: "Fira Code", Consolas, Monaco, "Andale Mono", monospace;
+code[class*='language-'],
+pre[class*='language-'] {
+  font-family: 'Fira Code', Consolas, Monaco, 'Andale Mono', monospace;
   font-size: 0.9em;
   border-radius: 3px;
 }
 
-pre[class*="language-"] {
+pre[class*='language-'] {
   margin-inline: -1em;
 }
 
-code:not([class*="language-"]) {
+code:not([class*='language-']) {
   font-family: monospace, monospace;
   background-color: var(--color-white-dark);
   color: var(--color-dark);
@@ -322,8 +322,8 @@ h3 {
   padding-inline-start: 1rem;
 } */
 
-.nav__item > a[aria-current="page"],
-.nav__item > a[data-state="active"] {
+.nav__item > a[aria-current='page'],
+.nav__item > a[data-state='active'] {
   font-weight: bold;
 }
 
