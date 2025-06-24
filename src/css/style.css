@@ -124,7 +124,7 @@ body {
   font-family: "Barlow", sans-serif;
   /* font-family: 'Encode Sans', sans-serif; */
   font-size: var(--size-step-1);
-  line-height: 1.7;
+  line-height: 1.6;
 }
 
 h1,
@@ -135,9 +135,9 @@ h2 {
   text-wrap: balance;
 }
 
-h3 {
+/* h3 {
   line-height: 1.5;
-}
+} */
 
 h1 {
   font-size: var(--size-step-5);
