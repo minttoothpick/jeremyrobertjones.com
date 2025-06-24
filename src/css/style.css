@@ -299,9 +299,10 @@ h3 {
 } */
 
 .site-head__logo {
-  width: 100%;
-  max-width: 400px;
+  aspect-ratio: 7.22 / 1;
   margin-inline: auto;
+  max-width: 400px;
+  width: 100%;
 }
 
 /**
