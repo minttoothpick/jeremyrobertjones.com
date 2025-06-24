@@ -21,17 +21,28 @@
 <title>{{ pageTitle }}</title>
 <link rel="canonical" href="{{ currentUrl }}" />
 
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+{# <link rel="apple-touch-icon" href="/path/to/icon.png" /> #}
+
 <meta property="og:site_name" content="{{ siteTitle }}" />
 <meta property="og:title" content="{{ pageTitle }}" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="{{ currentUrl }}" />
 
-{% if socialImage %}
+{% set ogImageWidth = socialImageWidth or 1200 %}
+{% set ogImageHeight = socialImageHeight or 630 %}
+{% set ogImage = socialImage or site.defaultSocialImage %}
+
+{% if ogImage %}
+  <meta name="twitter:title" content="{{ pageTitle }}" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta property="og:image" content="{{ socialImage }}" />
-  <meta name="twitter:image" content="{{ socialImage }}" />
+  <meta property="og:image" content="{{ ogImage }}" />
+  <meta name="twitter:image" content="{{ ogImage }}" />
   <meta property="og:image:alt" content="Page image for {{ site.name }}" />
   <meta name="twitter:image:alt" content="Page image for {{ site.name }}" />
+  <meta property="og:image:width" content="{{ ogImageWidth }}" />
+  <meta property="og:image:height" content="{{ ogImageHeight }}" />
 {% endif %}
 
 {% if metaDesc %}
