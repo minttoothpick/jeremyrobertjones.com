@@ -3,6 +3,7 @@
   "url": "https://jeremyrobertjones.com",
   "authorName": "Jeremy Robert Jones",
   "authorEmail": "minttoothpick@protonmail.com",
+  "defaultMetaDesc": "I'm Jeremy. I build things for the web with a focus on CSS and accessibility. I blog about front-end development, 11ty, and practical techniques for modern websites.",
   "defaultSocialImage": "https://jeremyrobertjones.com/images/og-default.png",
-  "defaultMetaDesc": "I'm Jeremy. I build things for the web with a focus on CSS and accessibility. I blog about front-end development, 11ty, and practical techniques for modern websites."
+  "defaultSocialImageAlt": "Jeremy Robert Jones: blog and resume"
 }
