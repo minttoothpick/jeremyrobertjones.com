@@ -7,6 +7,9 @@
 
 {% block content %}
   <style>
+    .resume-grid {
+      margin-block-start: 2.25em;
+    }
     .skills {
       margin-block-start: 1.5em;
     }
@@ -25,7 +28,7 @@
     {% include "partials/page-header.njk" %}
 
     <div class="resume-grid">
-      <div class="main flow">
+      <div class="flow">
         {{ content | safe }}
       </div>
 
