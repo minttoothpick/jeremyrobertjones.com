@@ -1,10 +1,11 @@
-const fs = require("fs");
-const crypto = require("crypto");
+const fs = require('fs');
+const crypto = require('crypto');
+const path = require('path');
+const resume = require('./resumeConfig');
 
 module.exports = async () => {
-  const pdfPath = "./src/docs/Jeremy_Jones_Web_Manager_Resume.pdf";
-  const pdfBuffer = fs.readFileSync(pdfPath);
-  const hash = crypto.createHash("md5").update(pdfBuffer).digest("hex");
+  const buffer = fs.readFileSync(resume.sourcePath);
+  const hash = crypto.createHash('md5').update(buffer).digest('hex');
   return {
     resumePdf: hash,
   };
