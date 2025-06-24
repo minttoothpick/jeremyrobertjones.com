@@ -8,15 +8,16 @@
 {% set siteTitle = site.name %}
 {% set currentUrl = site.url + page.url %}
 
-{# If the page’s Front Matter has specific metaTitle and/or metaDesc items, switch
-  them into the mix. #}
+{# If page Front Matter sets `metaTitle`, use that #}
 {% if metaTitle %}
   {% set pageTitle = metaTitle %}
 {% endif %}
 
-{% if not metaDesc %}
-  {% set metaDesc = summary %}
-{% endif %}
+{% set ogImage = socialImage or site.defaultSocialImage %}
+{% set ogImageWidth = socialImageWidth or 1200 %}
+{% set ogImageHeight = socialImageHeight or 630 %}
+
+{% set ogDesc = metaDesc or summary or site.defaultMetaDesc %}
 
 <title>{{ pageTitle }}</title>
 <link rel="canonical" href="{{ currentUrl }}" />
@@ -30,23 +31,19 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="{{ currentUrl }}" />
 
-{% set ogImageWidth = socialImageWidth or 1200 %}
-{% set ogImageHeight = socialImageHeight or 630 %}
-{% set ogImage = socialImage or site.defaultSocialImage %}
-
 {% if ogImage %}
   <meta name="twitter:title" content="{{ pageTitle }}" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta property="og:image" content="{{ ogImage }}" />
   <meta name="twitter:image" content="{{ ogImage }}" />
-  <meta property="og:image:alt" content="Page image for {{ site.name }}" />
   <meta name="twitter:image:alt" content="Page image for {{ site.name }}" />
+  <meta property="og:image" content="{{ ogImage }}" />
+  <meta property="og:image:alt" content="Page image for {{ site.name }}" />
   <meta property="og:image:width" content="{{ ogImageWidth }}" />
   <meta property="og:image:height" content="{{ ogImageHeight }}" />
 {% endif %}
 
 {% if metaDesc %}
-  <meta name="description" content="{{ metaDesc }}" />
-  <meta name="twitter:description" content="{{ metaDesc }}" />
-  <meta property="og:description" content="{{ metaDesc }}" />
+  <meta name="description" content="{{ ogDesc }}" />
+  <meta name="twitter:description" content="{{ ogDesc }}" />
+  <meta property="og:description" content="{{ ogDesc }}" />
 {% endif %}
