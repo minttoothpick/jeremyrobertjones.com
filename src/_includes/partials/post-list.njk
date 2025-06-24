@@ -7,8 +7,8 @@
     <li class="post-list__item flow">
       <time datetime="{{ item.data.date | dateFilterW3 }}">{{ item.data.date | dateFilter }}</time>
       <a href="{{ item.url }}" class="post-list__title">{{ item.data.title }}</a>
-      {% if item.data.blurb %}
-        <p class="post-list__blurb">{{ item.data.blurb }}</p>
+      {% if item.data.summary %}
+        <p class="post-list__summary">{{ item.data.summary }}</p>
       {% endif %}
       {% if item.data.tags %}
         <p class="visually-hidden" id="tags-desc">Tags that this post has been filed under.</p>

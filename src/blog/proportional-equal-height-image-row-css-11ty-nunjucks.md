@@ -1,12 +1,12 @@
 ---
-title: "Creating proportional, equal-height image rows with CSS, 11ty, and Nunjucks"
-date: "2025-06-15"
+title: 'Creating proportional, equal-height image rows with CSS, 11ty, and Nunjucks'
+date: '2025-06-15'
 featureImage:
-  url: "/images/row-of-picture-frames.svg"
-  alt: "Three picture frames in a row"
-tags: ["technical"]
-subTags: ["CSS", "11ty", "Tutorial"]
-blurb: "How I built an aspect-ratio-respecting image row component and Nunjucks shortcode."
+  url: '/images/row-of-picture-frames.svg'
+  alt: 'Three picture frames in a row'
+tags: ['technical']
+subTags: ['CSS', '11ty', 'Tutorial']
+summary: 'How I built an aspect-ratio-respecting image row component and Nunjucks shortcode.'
 lede: "Equal-height image layouts seem simple until you try to build one that's truly responsive. This tutorial walks through my solution using flexbox aspect ratios, the Eleventy Image plugin, and a Nunjucks shortcode."
 ---
 
@@ -156,11 +156,11 @@ Here's what I have in my `.eleventy.js` file:
 
 ```js
 eleventyConfig.addNunjucksAsyncShortcode(
-  "imageRow",
-  async function (images, caption = "") {
-    const srcDir = "src/images/";
-    const outputDir = "dist/images/";
-    const imgUrlPath = "/images/";
+  'imageRow',
+  async function (images, caption = '') {
+    const srcDir = 'src/images/';
+    const outputDir = 'dist/images/';
+    const imgUrlPath = '/images/';
 
     try {
       const imageData = await Promise.all(
@@ -169,7 +169,7 @@ eleventyConfig.addNunjucksAsyncShortcode(
 
           const metadata = await Image(fullImagePath, {
             widths: [300, 600, 900, 1200],
-            formats: ["jpeg"],
+            formats: ['jpeg'],
             outputDir: outputDir,
             urlPath: imgUrlPath,
             filenameFormat: (id, src, width, format) => {
@@ -183,17 +183,17 @@ eleventyConfig.addNunjucksAsyncShortcode(
           return {
             srcset: data
               .map((entry) => `${entry.url} ${entry.width}w`)
-              .join(", "),
+              .join(', '),
             placeholder: data[0].url,
             aspectRatio: largestImage.width / largestImage.height,
-            alt: image.alt || "",
+            alt: image.alt || '',
           };
         })
       );
 
       const captionHtml = caption
         ? `<figcaption class="text-small">${caption}</figcaption>`
-        : "";
+        : '';
 
       return `<figure><div class="image-row">
         ${imageData
@@ -208,12 +208,12 @@ eleventyConfig.addNunjucksAsyncShortcode(
                     loading="lazy"
                     alt="${img.alt}">`
           )
-          .join("")}
+          .join('')}
       </div>
       ${captionHtml}
     </figure>`;
     } catch (error) {
-      console.error("Error processing image row: ", error);
+      console.error('Error processing image row: ', error);
       return `<div class="error">Image could not be displayed.</div>`;
     }
   }
@@ -225,8 +225,8 @@ Let's walk through this bit by bit.
 ### Include plugins
 
 ```js
-const Image = require("@11ty/eleventy-img");
-const path = require("path");
+const Image = require('@11ty/eleventy-img');
+const path = require('path');
 ```
 
 Include the Eleventy Image plugin and `path` (this is available by default through Node; it provides utilities for working with file and directory paths). Put these two lines at the very top of `.eleventy.js`.
@@ -261,7 +261,7 @@ For each image, we construct the full path to the source file.
 ```js
 const metadata = await Image(fullImagePath, {
   widths: [300, 600, 900, 1200],
-  formats: ["jpeg"],
+  formats: ['jpeg'],
   outputDir: outputDir,
   urlPath: imgUrlPath,
   filenameFormat: (id, src, width, format) => {
@@ -279,10 +279,10 @@ Here, we choose the different pixel widths and formats to generate for each imag
 const data = metadata.jpeg;
 const largestImage = data[data.length - 1];
 return {
-  srcset: data.map((entry) => `${entry.url} ${entry.width}w`).join(", "),
+  srcset: data.map((entry) => `${entry.url} ${entry.width}w`).join(', '),
   placeholder: data[0].url,
   aspectRatio: largestImage.width / largestImage.height,
-  alt: image.alt || "",
+  alt: image.alt || '',
 };
 ```
 
@@ -293,7 +293,7 @@ This constructs the `srcset`, uses the dimensions of the largest source image to
 ```js
 const captionHtml = caption
   ? `<figcaption class="text-small">${caption}</figcaption>`
-  : "";
+  : '';
 
 return `<figure><div class="image-row">
   ${imageData
@@ -308,7 +308,7 @@ return `<figure><div class="image-row">
               loading="lazy"
               alt="${img.alt}">`
     )
-    .join("")}
+    .join('')}
 </div>
 ${captionHtml}
 </figure>`;
