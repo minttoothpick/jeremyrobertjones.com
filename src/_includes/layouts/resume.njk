@@ -1,6 +1,9 @@
 {% extends "layouts/base.njk" %}
 
 {% set pageHeaderTitle = title %}
+{% set pageHeaderSummary %}
+  <p>You can <a href="Jeremy_Jones_Web_Manager_Resume.pdf?v={{ cacheBusters.resumePdf }}">download a PDF version of my resume</a> if you prefer.</p>
+{% endset %}
 
 {% block content %}
   <style>

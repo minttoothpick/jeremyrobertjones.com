@@ -51,6 +51,9 @@ module.exports = (eleventyConfig) => {
   eleventyConfig.addPassthroughCopy({
     "src/images/favicon/*": "/",
   });
+  eleventyConfig.addPassthroughCopy({
+    "src/docs/Jeremy_Jones_Web_Manager_Resume.pdf": "/resume",
+  });
 
   return {
     markdownTemplateEngine: "njk",
