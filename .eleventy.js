@@ -55,7 +55,7 @@ module.exports = (eleventyConfig) => {
     'src/images/favicon/*': '/',
   });
   eleventyConfig.addPassthroughCopy({
-    'resume.sourcePath': 'resume.publicPath',
+    [resume.sourcePath]: resume.publicPath,
   });
 
   return {
