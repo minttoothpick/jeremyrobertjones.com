@@ -393,7 +393,7 @@ time {
   gap: var(--gap, 1em);
 }
 
-.image-row > img {
+.image-row__item > img {
   width: 100%;
 }
 
@@ -402,7 +402,7 @@ time {
     flex-direction: row;
   }
 
-  .image-row > img {
+  .image-row__item {
     flex: var(--aspect-ratio);
   }
 }
