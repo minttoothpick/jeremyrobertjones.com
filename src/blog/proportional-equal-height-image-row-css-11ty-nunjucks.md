@@ -1,6 +1,7 @@
 ---
 title: 'Creating proportional, equal-height image rows with CSS, 11ty, and Nunjucks'
 date: '2025-06-15'
+editDate: '2025-07-07'
 featureImage:
   url: '/images/row-of-picture-frames.svg'
   alt: 'Three picture frames in a row'
@@ -8,6 +9,7 @@ tags: ['technical']
 subTags: ['CSS', '11ty', 'Tutorial']
 summary: 'How I built an aspect-ratio-respecting image row component and Nunjucks shortcode.'
 lede: "Equal-height image layouts seem simple until you try to build one that's truly responsive. This tutorial walks through my solution using flexbox aspect ratios, the Eleventy Image plugin, and a Nunjucks shortcode."
+soundtrack: '*Club Sentimientos, Vol. 2* by DJ Python'
 ---
 
 A while back I came across an unexpectedly challenging image layout issue in CSS. I wanted to create a fluid, flexible, responsive image row where:
@@ -35,7 +37,7 @@ So what's missing? It involves aspect ratios, of course!
 
 Eventually, I found this [Codepen by Pat McKenna](https://codepen.io/blimpage/pen/obWdgp) demonstrating a [technique by Kartik Prabhu](https://web.archive.org/web/20171029140328/https://kartikprabhu.com/articles/equal-height-images-flexbox) that was the key to solving this puzzle. (The concept is also explained well by [Oliver Pattison in their article](https://web.archive.org/web/20210510190400/https://olivermak.es/2017/01/fluid-grid/).)
 
-The key is **using each image's aspect ratio as its `flex` value**:
+The key is **using each image's aspect ratio as its parent container’s `flex` value**:
 
 ```css
 .fluid-row > img {
@@ -47,16 +49,24 @@ Here's a basic implementation:
 
 ```html
 <figure class="fluid-row">
-  <img
-    src="landscape.jpg"
-    alt="Landscape image"
+  <div
+    class="fluid-row__item"
     style="--aspect-ratio: 1.5;"
-  />
-  <img
-    src="portrait.jpg"
-    alt="Portrait image"
+  >
+    <img
+      src="landscape.jpg"
+      alt="Landscape image"
+    />
+  </div>
+  <div
+    class="fluid-row__item"
     style="--aspect-ratio: 0.8;"
-  />
+  >
+    <img
+      src="portrait.jpg"
+      alt="Portrait image"
+    />
+  </div>
   <!-- more images... -->
 </figure>
 ```
@@ -66,13 +76,22 @@ Here's a basic implementation:
   display: flex;
 }
 
-.fluid-row > img {
-  width: 100%;
+.fluid-row__item {
   flex: var(--aspect-ratio);
+}
+
+.fluid-row__item > img {
+  width: 100%;
 }
 ```
 
 See [Equal-height flexible image row 2: solution](https://codepen.io/minttoothpick/pen/NPWwBBb) on Codepen.
+
+<aside style="background-color: rgba(0,0,0,0.1); padding: .9em; margin-inline: -.9em; border-radius: 3px;">
+
+**Whoops:** My original version of this code did not include the `div.fluid-row__item` elements around each image. This worked in Firefox, but Webkit seems to let `img { width: 100%; }` override the `flex` value. Wrapping each image in a container and setting `flex` there takes care of this.
+
+</aside>
 
 ## How the CSS works
 
@@ -114,14 +133,18 @@ Here's a basic implementation with lazysizes:
 
 ```html
 <div class="fluid-row">
-  <img
-    data-srcset="image-300.jpg 300w, image-600.jpg 600w, image-900.jpg 900w"
-    data-sizes="auto"
-    class="lazyload"
+  <div
+    class="fluid-row__item"
     style="--aspect-ratio: 1.5;"
-    src="image-tiny.jpg"
-    alt="My image"
-  />
+  >
+    <img
+      data-srcset="image-300.jpg 300w, image-600.jpg 600w, image-900.jpg 900w"
+      data-sizes="auto"
+      class="lazyload"
+      src="image-tiny.jpg"
+      alt="My image"
+    />
+  </div>
   <!-- more images... -->
 </div>
 ```
@@ -152,72 +175,73 @@ The shortcode looks like this:
 
 ## Building the shortcode
 
-Here's what I have in my `.eleventy.js` file:
+Here’s the full code (I put it in `src/shortcodes/imageRow.js` and import that into `.eleventy.js`).
 
 ```js
-eleventyConfig.addNunjucksAsyncShortcode(
-  'imageRow',
-  async function (images, caption = '') {
-    const srcDir = 'src/images/';
-    const outputDir = 'dist/images/';
-    const imgUrlPath = '/images/';
+const path = require('path');
+const Image = require('@11ty/eleventy-img');
 
-    try {
-      const imageData = await Promise.all(
-        images.map(async (image) => {
-          const fullImagePath = `${srcDir}${image.src}`;
+module.exports = async function imageRow(images, caption = '') {
+  const srcDir = 'src/images/';
+  const outputDir = 'dist/images/';
+  const imgUrlPath = '/images/';
 
-          const metadata = await Image(fullImagePath, {
-            widths: [300, 600, 900, 1200],
-            formats: ['jpeg'],
-            outputDir: outputDir,
-            urlPath: imgUrlPath,
-            filenameFormat: (id, src, width, format) => {
-              const filename = path.basename(src, path.extname(src));
-              return `${filename}-${width}w.${format}`;
-            },
-          });
+  try {
+    const imageData = await Promise.all(
+      images.map(async (image) => {
+        const fullImagePath = `${srcDir}${image.src}`;
 
-          const data = metadata.jpeg;
-          const largestImage = data[data.length - 1];
-          return {
-            srcset: data
-              .map((entry) => `${entry.url} ${entry.width}w`)
-              .join(', '),
-            placeholder: data[0].url,
-            aspectRatio: largestImage.width / largestImage.height,
-            alt: image.alt || '',
-          };
-        })
-      );
+        const metadata = await Image(fullImagePath, {
+          widths: [300, 600, 900, 1200],
+          formats: ['jpeg'],
+          outputDir: outputDir,
+          urlPath: imgUrlPath,
+          filenameFormat: (id, src, width, format) => {
+            const filename = path.basename(src, path.extname(src));
+            return `${filename}-${width}w.${format}`;
+          },
+        });
 
-      const captionHtml = caption
-        ? `<figcaption class="text-small">${caption}</figcaption>`
-        : '';
+        const data = metadata.jpeg;
+        const largestImage = data[data.length - 1];
+        return {
+          srcset: data
+            .map((entry) => `${entry.url} ${entry.width}w`)
+            .join(', '),
+          placeholder: data[0].url,
+          aspectRatio: largestImage.width / largestImage.height,
+          alt: image.alt || '',
+        };
+      })
+    );
 
-      return `<figure><div class="image-row">
-        ${imageData
-          .map(
-            (img) =>
-              `<img src="${img.placeholder}"
-                    data-srcset="${img.srcset}"
-                    data-sizes="auto"
-                    decoding="async"
-                    class="lazyload"
-                    style="--aspect-ratio: ${img.aspectRatio}"
-                    loading="lazy"
-                    alt="${img.alt}">`
-          )
-          .join('')}
-      </div>
-      ${captionHtml}
-    </figure>`;
-    } catch (error) {
-      console.error('Error processing image row: ', error);
-      return `<div class="error">Image could not be displayed.</div>`;
-    }
+    const captionHtml = caption
+      ? `<figcaption class="text-small">${caption}</figcaption>`
+      : '';
+
+    return `<figure><div class="image-row">
+      ${imageData
+        .map(
+          (img) =>
+            `<div class="image-row__item" style="--aspect-ratio: ${img.aspectRatio}">
+              <img src="${img.placeholder}"
+                   data-srcset="${img.srcset}"
+                   data-sizes="auto"
+                   decoding="async"
+                   class="lazyload"
+                   loading="lazy"
+                   alt="${img.alt}">
+            </div>`
+        )
+        .join('')}
+    </div>
+    ${captionHtml}
+  </figure>`;
+  } catch (error) {
+    console.error('Error processing image row: ', error);
+    return `<div class="error">Image could not be displayed.</div>`;
   }
-);
+};
 ```
 
 Let's walk through this bit by bit.
@@ -229,29 +253,28 @@ const Image = require('@11ty/eleventy-img');
 const path = require('path');
 ```
 
-Include the Eleventy Image plugin and `path` (this is available by default through Node; it provides utilities for working with file and directory paths). Put these two lines at the very top of `.eleventy.js`.
+Include the Eleventy Image plugin and `path` (this is available by default through Node; it provides utilities for working with file and directory paths).
 
 ### Define the shortcode and path variables
 
 ```js
-eleventyConfig.addNunjucksAsyncShortcode(
-  "imageRow",
-  async function (images, caption = "") {
-    const srcDir = "src/images/";
-    const outputDir = "dist/images/";
-    const imgUrlPath = "/images/";
+module.exports = async function imageRow(images, caption = '') {
+  const srcDir = 'src/images/';
+  const outputDir = 'dist/images/';
+  const imgUrlPath = '/images/';
 ```
 
-This registers the shortcode for use in Nunjucks templates. The parameters accept an array of image objects (each of these will contain a `src` and `alt` property), and an optional string to use for the `figcaption` on the entire row.
+The parameters accept an array of image objects (each of these will contain a `src` and `alt` property), and an optional string to use for the `figcaption` on the entire row.
 
 I'm also declaring variables to define where my source images are stored, where processed images will be saved, and the URL path to use in the generated HTML. You'll want to adjust these to match your project's directory structure.
 
 ### Process each image asynchronously
 
 ```js
-const imageData = await Promise.all(
-  images.map(async (image) => {
-    const fullImagePath = `${srcDir}${image.src}`;
+try {
+  const imageData = await Promise.all(
+    images.map(async (image) => {
+      const fullImagePath = `${srcDir}${image.src}`;
 ```
 
 For each image, we construct the full path to the source file.
@@ -296,21 +319,22 @@ const captionHtml = caption
   : '';
 
 return `<figure><div class="image-row">
-  ${imageData
-    .map(
-      (img) =>
-        `<img src="${img.placeholder}"
-              data-srcset="${img.srcset}"
-              data-sizes="auto"
-              decoding="async"
-              class="lazyload"
-              style="--aspect-ratio: ${img.aspectRatio}"
-              loading="lazy"
-              alt="${img.alt}">`
-    )
-    .join('')}
-</div>
-${captionHtml}
+    ${imageData
+      .map(
+        (img) =>
+          `<div class="image-row__item" style="--aspect-ratio: ${img.aspectRatio}">
+            <img src="${img.placeholder}"
+                  data-srcset="${img.srcset}"
+                  data-sizes="auto"
+                  decoding="async"
+                  class="lazyload"
+                  loading="lazy"
+                  alt="${img.alt}">
+          </div>`
+      )
+      .join('')}
+  </div>
+  ${captionHtml}
 </figure>`;
 ```
 

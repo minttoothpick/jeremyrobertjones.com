@@ -54,9 +54,9 @@ module.exports = async function imageRow(images, caption = '') {
             </div>`
         )
         .join('')}
-    </div>
-    ${captionHtml}
-  </figure>`;
+      </div>
+      ${captionHtml}
+    </figure>`;
   } catch (error) {
     console.error('Error processing image row: ', error);
     return `<div class="error">Image could not be displayed.</div>`;
