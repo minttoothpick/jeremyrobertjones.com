@@ -89,7 +89,7 @@ See [Equal-height flexible image row 2: solution](https://codepen.io/minttoothpi
 
 <aside style="background-color: rgba(0,0,0,0.1); padding: .9em; margin-inline: -.9em; border-radius: 3px;">
 
-**Whoops:** My original version of this code did not include the `div.fluid-row__item` elements around each image. This worked in Firefox, but Webkit seems to let `img { width: 100%; }` override the `flex` value. Wrapping each image in a container and setting `flex` there takes care of this.
+**Whoops:** My original version of this code did not include the `div.fluid-row__item` elements around each image. This worked in Firefox, but Chromium seems to let `img { width: 100%; }` override the `flex` value. Wrapping each image in a container and setting `flex` there takes care of this.
 
 </aside>
 
