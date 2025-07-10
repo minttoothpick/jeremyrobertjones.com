@@ -10,6 +10,8 @@ subTags: ['CSS', '11ty', 'Tutorial']
 summary: 'How I built an aspect-ratio-respecting image row component and Nunjucks shortcode.'
 lede: "Equal-height image layouts seem simple until you try to build one that's truly responsive. This tutorial walks through my solution using flexbox aspect ratios, the Eleventy Image plugin, and a Nunjucks shortcode."
 soundtrack: '*Club Sentimientos, Vol. 2* by DJ Python'
+scripts:
+  lazysizes: true
 ---
 
 A while back I came across an unexpectedly challenging image layout issue in CSS. I wanted to create a fluid, flexible, responsive image row where:
@@ -356,5 +358,3 @@ Return an error in the console and HTML if we run into any issues.
 **And that's it!** You now have a flexible, responsive image row component that automatically calculates aspect ratios and generates optimized images. The shortcode handles all the heavy lifting - just pass in your images and an optional caption. Good times.
 
 You can [view the code on GitHub](https://github.com/minttoothpick/jeremyrobertjones.com/blob/main/src/shortcodes/imageRow.js) if you want to adapt it for your own project!
-
-{% include "partials/lazysizes.njk" %}
