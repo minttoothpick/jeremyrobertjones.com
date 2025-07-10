@@ -10,6 +10,12 @@
   box-sizing: border-box;
 }
 
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
 /* Remove default margin */
 body,
 h1,
@@ -403,6 +409,7 @@ time {
   }
 
   .image-row__item {
+    aspect-ratio: var(--aspect-ratio);
     flex: var(--aspect-ratio);
   }
 }
