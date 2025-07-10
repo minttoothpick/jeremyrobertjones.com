@@ -357,4 +357,4 @@ Return an error in the console and HTML if we run into any issues.
 
 You can [view the code on GitHub](https://github.com/minttoothpick/jeremyrobertjones.com/blob/main/src/shortcodes/imageRow.js) if you want to adapt it for your own project!
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js" async></script>
+{% include "partials/lazysizes.njk" %}
