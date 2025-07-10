@@ -404,7 +404,7 @@ time {
   gap: var(--gap, 1em);
 }
 
-.image-row__item > img {
+.image-row__item img {
   width: 100%;
 }
 

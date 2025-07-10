@@ -13,7 +13,7 @@ module.exports = async function imageRow(images, caption = '') {
 
         const metadata = await Image(fullImagePath, {
           widths: [300, 600, 900, 1200],
-          formats: ['jpeg'],
+          formats: ['avif', 'webp', 'jpeg'],
           outputDir: outputDir,
           urlPath: imgUrlPath,
           filenameFormat: (id, src, width, format) => {
@@ -22,14 +22,23 @@ module.exports = async function imageRow(images, caption = '') {
           },
         });
 
-        const data = metadata.jpeg;
-        const largestImage = data[data.length - 1];
+        const jpegData = metadata.jpeg;
+        const webpData = metadata.webp;
+        const avifData = metadata.avif;
+        const largestJpeg = jpegData[jpegData.length - 1];
+
         return {
-          srcset: data
+          avifSrcset: avifData
             .map((entry) => `${entry.url} ${entry.width}w`)
             .join(', '),
-          placeholder: data[0].url,
-          aspectRatio: largestImage.width / largestImage.height,
+          webpSrcset: webpData
+            .map((entry) => `${entry.url} ${entry.width}w`)
+            .join(', '),
+          jpegSrcset: jpegData
+            .map((entry) => `${entry.url} ${entry.width}w`)
+            .join(', '),
+          placeholder: jpegData[0].url,
+          aspectRatio: largestJpeg.width / largestJpeg.height,
           alt: image.alt || '',
         };
       })
@@ -44,12 +53,17 @@ module.exports = async function imageRow(images, caption = '') {
         .map(
           (img) =>
             `<div class="image-row__item" style="--aspect-ratio: ${img.aspectRatio}">
-              <img src="${img.placeholder}"
-                   data-srcset="${img.srcset}"
-                   data-sizes="auto"
-                   decoding="async"
-                   class="lazyload"
-                   alt="${img.alt}">
+              <picture>
+                <source type="image/avif" data-srcset="${img.avifSrcset}" data-sizes="auto">
+                <source type="image/webp" data-srcset="${img.webpSrcset}" data-sizes="auto">
+                <img src="${img.placeholder}"
+                     data-srcset="${img.jpegSrcset}"
+                     data-sizes="auto"
+                     decoding="async"
+                     class="lazyload"
+                     alt="${img.alt}"
+                >
+              </picture>
             </div>`
         )
         .join('')}
