@@ -49,7 +49,6 @@ module.exports = async function imageRow(images, caption = '') {
                    data-sizes="auto"
                    decoding="async"
                    class="lazyload"
-                   loading="lazy"
                    alt="${img.alt}">
             </div>`
         )
