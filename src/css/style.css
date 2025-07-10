@@ -411,6 +411,7 @@ time {
   .image-row__item {
     aspect-ratio: var(--aspect-ratio);
     flex: var(--aspect-ratio);
+    width: 100%;
   }
 }
 
