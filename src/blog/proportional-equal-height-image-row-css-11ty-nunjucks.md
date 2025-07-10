@@ -5,6 +5,7 @@ editDate: '2025-07-07'
 featureImage:
   url: '/images/row-of-picture-frames.svg'
   alt: 'Three picture frames in a row'
+  aspectRatio: '1045 / 348'
 tags: ['technical']
 subTags: ['CSS', '11ty', 'Tutorial']
 summary: 'How I built an aspect-ratio-respecting image row component and Nunjucks shortcode.'
