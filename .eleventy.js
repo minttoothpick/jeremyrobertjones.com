@@ -46,6 +46,17 @@ module.exports = (eleventyConfig) => {
   eleventyConfig.addNunjucksAsyncShortcode('imageRow', imageRow);
 
   /**
+   * Drafts
+   * https://www.11ty.dev/docs/config-preprocessors/#example-drafts
+   */
+
+  eleventyConfig.addPreprocessor('drafts', '*', (data, content) => {
+    if (data.draft && process.env.ELEVENTY_ENV === 'prod') {
+      return false;
+    }
+  });
+
+  /**
    * Misc.
    */
 
