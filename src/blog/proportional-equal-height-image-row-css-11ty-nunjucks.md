@@ -10,7 +10,7 @@ tags: ['technical']
 subTags: ['CSS', '11ty', 'Tutorial']
 summary: 'How I built an aspect-ratio-respecting image row component and Nunjucks shortcode.'
 lede: "Equal-height image layouts seem simple until you try to build one that's truly responsive. This tutorial walks through my solution using flexbox aspect ratios, the Eleventy Image plugin, and a Nunjucks shortcode."
-soundtrack: '*Club Sentimientos, Vol. 2* by DJ Python'
+soundtrack: '<em><a href="https://djpythonnyc.bandcamp.com/album/club-sentimientos-vol-2" target="_blank">Club Sentimientos Vol 2</a></em> by DJ Python'
 scripts:
   lazysizes: true
 ---

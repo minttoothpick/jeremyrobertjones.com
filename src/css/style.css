@@ -369,16 +369,15 @@ h3 {
   --flow-space: 0.25em;
 }
 
-time {
-  display: block;
+.page-header__meta {
+  --flow-space: 0.25em;
   font-size: var(--size-step-0);
 }
 
 .tags-list {
-  --flow-space: 0.25em;
   list-style-type: none;
   padding-inline-start: 0;
-  font-size: var(--size-step-0);
+  margin-block-end: 0;
 }
 
 /**
