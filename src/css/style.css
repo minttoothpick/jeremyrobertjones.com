@@ -401,7 +401,7 @@ time {
 .image-row {
   display: flex;
   flex-direction: column;
-  gap: var(--gap, 1em);
+  gap: var(--gap, 0.5em);
 }
 
 .image-row__item img {
@@ -423,4 +423,20 @@ time {
 figcaption {
   font-size: var(--size-step-0);
   margin-block-start: var(--size-step-0);
+}
+
+.resizable {
+  resize: horizontal;
+  overflow: auto;
+  min-width: 200px;
+  /* border: 2px solid rgba(0, 0, 0, 0.1); */
+  border-radius: 3px;
+  background-color: rgba(0, 0, 0, 0.1);
+  background-color: var(--color-white-dark);
+  /* padding: 0.9 em;
+  margin-inline: -0.9em; */
+}
+
+.resizable > * {
+  padding: 0.5em;
 }

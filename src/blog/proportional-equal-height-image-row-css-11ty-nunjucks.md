@@ -1,7 +1,7 @@
 ---
 title: 'Creating proportional, equal-height image rows with CSS, 11ty, and Nunjucks'
 date: '2025-06-15'
-editDate: '2025-07-07'
+editDate: '2025-07-21'
 featureImage:
   url: '/images/row-of-picture-frames.svg'
   alt: 'Three picture frames in a row'
@@ -24,11 +24,15 @@ A while back I came across an unexpectedly challenging image layout issue in CSS
 
 Like this:
 
+<div class="resizable">
+
 {% imageRow [
   { src: "fireworks-couch.jpg", alt: "Alt text" },
   { src: "sloop.jpg", alt: "Alt text" },
   { src: "moontuck.jpg", alt: "Alt text" }
-], "These images all expand to fit the row width while maintaining equal height!" %}
+], "Adjust the width to see these images fit together nicely." %}
+
+</div>
 
 I thought this would be a _cinch_ with CSS right out of the (flex)box, but after fiddling with combinations of `flex` and `object-fit` values, I realized it was less intuitive than I assumed.
 
@@ -52,23 +56,11 @@ Here's a basic implementation:
 
 ```html
 <figure class="fluid-row">
-  <div
-    class="fluid-row__item"
-    style="--aspect-ratio: 1.5;"
-  >
-    <img
-      src="landscape.jpg"
-      alt="Landscape image"
-    />
+  <div class="fluid-row__item" style="--aspect-ratio: 1.5;">
+    <img src="landscape.jpg" alt="Landscape image" />
   </div>
-  <div
-    class="fluid-row__item"
-    style="--aspect-ratio: 0.8;"
-  >
-    <img
-      src="portrait.jpg"
-      alt="Portrait image"
-    />
+  <div class="fluid-row__item" style="--aspect-ratio: 0.8;">
+    <img src="portrait.jpg" alt="Portrait image" />
   </div>
   <!-- more images... -->
 </figure>
@@ -90,7 +82,9 @@ Here's a basic implementation:
 
 See [Equal-height flexible image row 2: solution](https://codepen.io/minttoothpick/pen/NPWwBBb) on Codepen.
 
-<aside style="background-color: rgba(0,0,0,0.1); padding: .9em; margin-inline: -.9em; border-radius: 3px;">
+{# TODO: Fix these hardcoded styles. Add BG color rule for aside > code elements. #}
+
+<aside style="background-color: var(--color-white-dark); padding: .9em; margin-inline: -.9em; border-radius: 3px;">
 
 **Whoops:** My original version of this code did not include the `div.fluid-row__item` elements around each image. This worked in Firefox, but Chromium seems to let `img { width: 100%; }` override the `flex` value. Wrapping each image in a container and setting `flex` there takes care of this.
 
@@ -136,10 +130,7 @@ Here's a basic implementation with lazysizes:
 
 ```html
 <div class="fluid-row">
-  <div
-    class="fluid-row__item"
-    style="--aspect-ratio: 1.5;"
-  >
+  <div class="fluid-row__item" style="--aspect-ratio: 1.5;">
     <img
       data-srcset="image-300.jpg 300w, image-600.jpg 600w, image-900.jpg 900w"
       data-sizes="auto"
