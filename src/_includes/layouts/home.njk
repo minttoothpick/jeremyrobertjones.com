@@ -1,6 +1,23 @@
 {% extends "layouts/base.njk" %}
 
 {% block content %}
+<style>
+body {
+  background-image:
+    url('/images/homebg2light.svg'),
+    url('/images/homebg1.svg'),
+    url('/images/homebg1.svg'),
+    url('/images/homebg2light.svg');
+  background-repeat: no-repeat;
+  background-position:
+    top -10em left -10em,
+    top -10em right -10em,
+    top -10em left -10em,
+    top -10em right -10em;
+  {# background-size: clamp(400px, 90vw, 1000px); #}
+}
+</style>
+
 <article class="flow">
   {{ content | safe }}
 </article>
