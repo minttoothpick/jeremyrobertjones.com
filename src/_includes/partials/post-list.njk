@@ -5,21 +5,23 @@
 <ol class="post-list flow" reversed>
   {% for item in postListItems %}
     <li class="post-list__item flow">
-      <time datetime="{{ item.data.date | dateFilterW3 }}">{{ item.data.date | dateFilter }}</time>
-      <a href="{{ item.url }}" class="post-list__title">{{ item.data.title }}</a>
+      <h3 class="post-list__title"><a href="{{ item.url }}">{{ item.data.title }}</a></h3>
       {% if item.data.summary %}
         <p class="post-list__summary">{{ item.data.summary }}</p>
       {% endif %}
-      {% if item.data.tags %}
-        <p class="visually-hidden" id="tags-desc">Tags that this post has been filed under.</p>
-        <ul class="tags-list" aria-describedby="tags-desc">
-          {% for tag in item.data.tags %}
-            <li>
-              <a href="/tag/{{ tag | slugify }}/">#{{ tag | replace(' ', '') }}</a>
-            </li>
-          {% endfor %}
-        </ul>
-      {% endif %}
+      <div class="post__meta">
+        <time datetime="{{ item.data.date | dateFilterW3 }}">{{ item.data.date | dateFilter }}</time>
+        {% if item.data.tags %}
+          <p class="visually-hidden" id="tags-desc">Tags that this post has been filed under.</p>
+          <ul class="tags-list post__meta" aria-describedby="tags-desc">
+            {% for tag in item.data.tags %}
+              <li>
+                <a href="/tag/{{ tag | slugify }}/">#{{ tag | replace(' ', '') }}</a>
+              </li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      </div>
     </li>
   {% endfor %}
 </ol>

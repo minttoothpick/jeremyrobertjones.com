@@ -369,7 +369,7 @@ h3 {
   --flow-space: 0.25em;
 }
 
-.page-header__meta {
+.post__meta {
   --flow-space: 0.25em;
   font-size: var(--size-step-0);
 }
