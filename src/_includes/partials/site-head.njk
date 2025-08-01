@@ -2,7 +2,7 @@
   <a class="skip-link" href="#main-content">Skip to content</a>
   <a href="/"><img class="site-head__logo" src="/images/logo.svg" alt="Jeremy Robert Jones"></a>
   <nav class="nav site-head__nav" aria-label="Primary navigation">
-    <ul class="nav__list">
+    <ul class="nav__list inline-list">
       {% for item in navigation.items %}
         <li class="nav__item">
           <a href="{{ item.url }}" {{ helpers.getLinkActiveState(item.url, page.url) | safe }}>{{ item.text }}</a>
