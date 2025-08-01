@@ -13,7 +13,7 @@
         <time datetime="{{ item.data.date | dateFilterW3 }}">{{ item.data.date | dateFilter }}</time>
         {% if item.data.tags %}
           <p class="visually-hidden" id="tags-desc">Tags that this post has been filed under.</p>
-          <ul class="tags-list post__meta" aria-describedby="tags-desc">
+          <ul class="tags-list post__meta inline-list" aria-describedby="tags-desc">
             {% for tag in item.data.tags %}
               <li>
                 <a href="/tag/{{ tag | slugify }}/">#{{ tag | replace(' ', '') }}</a>

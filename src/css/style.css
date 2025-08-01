@@ -316,18 +316,23 @@ h3 {
   width: 100%;
 }
 
+.inline-list {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: var(--row-gap, 0.25em);
+  column-gap: var(--column-gap, 1em);
+  /* gap: 0.25em 1em; */
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
 /**
  * Nav
  */
 
 .nav__list {
-  display: flex;
-  flex-wrap: wrap;
   justify-content: center;
-  gap: 0.25em 1em;
-  padding: 0;
-  margin: 0;
-  list-style: none;
 }
 
 /* .nav__list > * {
@@ -375,9 +380,7 @@ h3 {
 }
 
 .tags-list {
-  list-style-type: none;
-  padding-inline-start: 0;
-  margin-block-end: 0;
+  --column-gap: 0.5em;
 }
 
 /**
