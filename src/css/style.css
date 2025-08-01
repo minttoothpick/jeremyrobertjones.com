@@ -117,33 +117,22 @@ select {
   --size-step-5: clamp(3.0518rem, 2.9191rem + 0.6634vw, 3.4332rem);
 }
 
-/* html {
-  font-size: 110%;
-} */
-
 body {
   background: var(--color-white);
   color: var(--color-black);
   padding: 2em;
-  /* font-family: 'Wittgenstein', Georgia, serif; */
   font-family: sans-serif;
   font-family: 'Barlow', sans-serif;
-  /* font-family: 'Encode Sans', sans-serif; */
   font-size: var(--size-step-1);
   line-height: 1.6;
 }
 
 h1,
 h2 {
-  /* font-family: 'Wittgenstein', Georgia, serif; */
   font-weight: 700;
   line-height: 1.2;
-  /* text-wrap: balance; */
+  text-wrap: balance;
 }
-
-/* h3 {
-  line-height: 1.5;
-} */
 
 /* To stop Pagespeed Insights from complaining */
 h1,
@@ -303,12 +292,6 @@ h3 {
  * Header
  */
 
-/* .site-head {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-} */
-
 .site-head__logo {
   aspect-ratio: 7.22 / 1;
   margin-inline: auto;
@@ -321,7 +304,6 @@ h3 {
   flex-wrap: wrap;
   row-gap: var(--row-gap, 0.25em);
   column-gap: var(--column-gap, 1em);
-  /* gap: 0.25em 1em; */
   padding: 0;
   margin: 0;
   list-style: none;
@@ -334,10 +316,6 @@ h3 {
 .nav__list {
   justify-content: center;
 }
-
-/* .nav__list > * {
-  padding-inline-start: 1rem;
-} */
 
 .nav__item > a[aria-current='page'],
 .nav__item > a[data-state='active'] {
@@ -391,9 +369,7 @@ h3 {
   max-width: 60ch;
   margin-inline: auto;
   text-align: center;
-  /* display: flex; */
   margin-block-start: 3em;
-  /* gap: 0.5em; */
 }
 
 /**
@@ -427,16 +403,17 @@ figcaption {
   margin-block-start: var(--size-step-0);
 }
 
+/**
+ * Utilities
+ */
+
 .resizable {
   resize: horizontal;
   overflow: auto;
   min-width: 200px;
-  /* border: 2px solid rgba(0, 0, 0, 0.1); */
   border-radius: 3px;
   background-color: rgba(0, 0, 0, 0.1);
   background-color: var(--color-white-dark);
-  /* padding: 0.9 em;
-  margin-inline: -0.9em; */
 }
 
 .resizable > * {
