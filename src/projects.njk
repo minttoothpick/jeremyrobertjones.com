@@ -1,0 +1,27 @@
+---
+title: Projects
+---
+{% extends "layouts/base.njk" %}
+
+{% set pageHeaderTitle = title %}
+{% set pageHeaderSummary = content %}
+
+{% block content %}
+<article class="flow">
+  {% include "partials/page-header.njk" %}
+  <ol class="post-list flow" reversed>
+    <li class="post-list__item flow">
+      <h3 class="post-list__title"><a href="https://life-in-weeks.jeremyrobertjones.com/">My Life in Weeks</a></h3>
+      <p class="post-list__summary">Visualizing my life as a bunch of boxes.</p>
+      <div class="post__meta">
+        <time datetime="{{ '2025-07-30' | dateFilterW3 }}">{{ '2025-07-30' | dateFilter }}</time>
+        <p class="visually-hidden" id="tags-desc">Tags that this post has been filed under.</p>
+        <ul class="tags-list post__meta inline-list" aria-describedby="tags-desc">
+          <li>#code</li>
+          <li>#data-viz</li>
+        </ul>
+      </div>
+    </li>
+</ol>
+</article>
+{% endblock %}
