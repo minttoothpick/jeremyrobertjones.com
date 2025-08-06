@@ -1,13 +1,15 @@
 <div class="page-header flow">
   {% if featureImage %}
-    <img
-      class="post__feature-image"
-      src="{{ featureImage.url }}"
-      alt="{{ featureImage.alt }}"
-      style="aspect-ratio: {{ featureImage.aspectRatio }};"
-      loading="eager"
-      fetchpriority="high"
-    >
+    <figure class="post__feature-image-figure">
+      <img
+        class="post__feature-image"
+        src="{{ featureImage.url }}"
+        alt="{{ featureImage.alt }}"
+        style="aspect-ratio: {{ featureImage.aspectRatio }};"
+        loading="eager"
+        fetchpriority="high"
+      >
+    </figure>
   {% endif %}
   <h1>{{ pageHeaderTitle }}</h1>
   {% if pageHeaderSummary %}

@@ -348,7 +348,11 @@ h3 {
  * Articles (sorta)
  */
 
-.post__feature-image + h1 {
+.post__feature-image-figure {
+  margin-inline: -4em;
+}
+
+.post__feature-image-figure + h1 {
   --flow-space: 0.25em;
 }
 
