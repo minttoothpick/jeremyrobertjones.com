@@ -8,6 +8,7 @@ const dateFilterW3 = require('./src/filters/date-filter-w3.js');
 
 /* Shortcodes */
 const imageRow = require('./src/shortcodes/imageRow');
+const imageSingle = require('./src/shortcodes/imageSingle.js');
 
 /* Data */
 const resume = require('./src/_data/resumeConfig');
@@ -44,6 +45,7 @@ module.exports = (eleventyConfig) => {
    */
 
   eleventyConfig.addNunjucksAsyncShortcode('imageRow', imageRow);
+  eleventyConfig.addNunjucksAsyncShortcode('imageSingle', imageSingle);
 
   /**
    * Drafts

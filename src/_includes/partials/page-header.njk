@@ -1,6 +1,8 @@
 <div class="page-header flow">
   {% if featureImage %}
-    <figure class="post__feature-image-figure">
+    {% imageSingle { src: featureImage.url, alt: featureImage.alt | escape } %}
+
+    {# <figure class="post__feature-image-figure">
       <img
         class="post__feature-image"
         src="{{ featureImage.url }}"
@@ -9,7 +11,7 @@
         loading="eager"
         fetchpriority="high"
       >
-    </figure>
+    </figure> #}
   {% endif %}
   <h1>{{ pageHeaderTitle }}</h1>
   {% if pageHeaderSummary %}

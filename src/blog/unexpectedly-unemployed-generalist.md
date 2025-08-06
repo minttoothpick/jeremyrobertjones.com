@@ -3,9 +3,8 @@ title: 'On being an unexpectedly unemployed generalist'
 date: '2025-08-01'
 editDate:
 featureImage:
-  url: '/images/generalist-multitool.png'
+  url: 'generalist-multitool.png'
   alt: 'A hand holds a multitool; arrows point to each item, with labels like "rarely used, oddly specific", "needs sharpening", and "good enough"'
-  aspectRatio: '4133 / 2736'
 tags: ['personal']
 subTags:
 summary: ''

@@ -120,7 +120,7 @@ select {
 body {
   background: var(--color-white);
   color: var(--color-black);
-  padding: 2em;
+  padding: min(6vw, 4em);
   font-family: sans-serif;
   font-family: 'Barlow', sans-serif;
   font-size: var(--size-step-1);
@@ -348,8 +348,10 @@ h3 {
  * Articles (sorta)
  */
 
-.post__feature-image-figure {
-  margin-inline: -4em;
+@media (min-width: 1000px) {
+  .post__feature-image-figure {
+    margin-inline: -4em;
+  }
 }
 
 .post__feature-image-figure + h1 {
