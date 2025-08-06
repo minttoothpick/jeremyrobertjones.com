@@ -5,6 +5,7 @@ const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 /* Filters */
 const dateFilter = require('./src/filters/date-filter.js');
 const dateFilterW3 = require('./src/filters/date-filter-w3.js');
+const endsWith = require('./src/filters/ends-with.js');
 
 /* Shortcodes */
 const imageRow = require('./src/shortcodes/imageRow');
@@ -17,7 +18,6 @@ module.exports = (eleventyConfig) => {
   /**
    * Collections
    */
-
   // Returns a collection of blog posts in reverse date order
   eleventyConfig.addCollection('blog', (collection) => {
     return [...collection.getFilteredByGlob('./src/blog/*.md')].reverse();
@@ -26,16 +26,15 @@ module.exports = (eleventyConfig) => {
   /**
    * Plugins
    */
-
   eleventyConfig.addPlugin(syntaxHighlight);
   eleventyConfig.addPlugin(rssPlugin);
 
   /**
    * Filters
    */
-
   eleventyConfig.addFilter('dateFilter', dateFilter);
   eleventyConfig.addFilter('dateFilterW3', dateFilterW3);
+  eleventyConfig.addFilter('endsWith', endsWith);
   eleventyConfig.addNunjucksFilter('limit', (arr, limit) =>
     arr.slice(0, limit)
   );
@@ -43,7 +42,6 @@ module.exports = (eleventyConfig) => {
   /**
    * Shortcodes
    */
-
   eleventyConfig.addNunjucksAsyncShortcode('imageRow', imageRow);
   eleventyConfig.addNunjucksAsyncShortcode('imageSingle', imageSingle);
 

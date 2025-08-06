@@ -1,17 +1,19 @@
 <div class="page-header flow">
   {% if featureImage %}
-    {% imageSingle { src: featureImage.url, alt: featureImage.alt | escape } %}
-
-    {# <figure class="post__feature-image-figure">
-      <img
-        class="post__feature-image"
-        src="{{ featureImage.url }}"
-        alt="{{ featureImage.alt }}"
-        style="aspect-ratio: {{ featureImage.aspectRatio }};"
-        loading="eager"
-        fetchpriority="high"
-      >
-    </figure> #}
+    <figure class="post__feature-image-figure">
+      {% if featureImage.url | endsWith('svg') %}
+        <img
+          class="post__feature-image"
+          src="{{ featureImage.url }}"
+          alt="{{ featureImage.alt | e }}"
+          style="aspect-ratio: {{ featureImage.aspectRatio }};"
+          loading="eager"
+          fetchpriority="high"
+        >
+      {% else %}
+        {% imageSingle { src: featureImage.url, alt: featureImage.alt | e } %}
+      {% endif %}
+    </figure>
   {% endif %}
   <h1>{{ pageHeaderTitle }}</h1>
   {% if pageHeaderSummary %}

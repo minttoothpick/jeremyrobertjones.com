@@ -3,7 +3,6 @@ const Image = require('@11ty/eleventy-img');
 
 module.exports = async function imageSingle(
   image,
-  figureClasses = 'post__feature-image-figure',
   imgClasses = 'post__feature-image',
   formats = ['avif', 'webp', 'png'],
   widths = [300, 600, 900, 1200, 1600, 1900, 2200]
@@ -45,8 +44,7 @@ module.exports = async function imageSingle(
       })
       .join('\n');
 
-    return `<figure class="${figureClasses}">
-  <picture>
+    return `<picture>
     ${sources}
     <img
       class="${imgClasses}"
@@ -62,8 +60,7 @@ module.exports = async function imageSingle(
       fetchpriority="high"
       decoding="async"
     >
-  </picture>
-</figure>`;
+  </picture>`;
   } catch (error) {
     console.error('Error processing single image: ', error);
     return `<div class="error">Image could not be displayed.</div>`;
