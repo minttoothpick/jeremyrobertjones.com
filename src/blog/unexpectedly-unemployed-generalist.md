@@ -11,7 +11,7 @@ summary: ''
 lede: ''
 meta:
   desc: 'A reflection on unexpectedly losing a generalist web role — and what it means to be useful in a job market that prizes specialization.'
-  imageSrc: '/images/social/unexpectedly-unemployed-generalist.png'
+  imageSrc: 'unexpectedly-unemployed-generalist.png'
   imageAlt: 'A hand holds a multitool; arrows point to its various tools, each labeled: "rarely used, oddly specific", "forgot i had this", "needs sharpening", "good enough", "only needed this once", and "works in a pinch".'
 scripts:
   lazysizes: true
