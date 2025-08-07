@@ -32,6 +32,7 @@
 <meta property="og:description" content="{{ pageDesc }}">
 {% if pageImage %}
   <meta property="og:image" content="{{ pageImage }}">
+  <meta name="og:image:alt" content="{{ meta.imageAlt or site.socialImageAlt }}">
   <meta property="og:image:width" content="{{ meta.imageWidth or 1200 }}">
   <meta property="og:image:height" content="{{ meta.imageHeight or 630 }}">
 {% endif %}
