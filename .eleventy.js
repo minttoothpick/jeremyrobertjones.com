@@ -1,6 +1,7 @@
 /* Plugins */
 const rssPlugin = require('@11ty/eleventy-plugin-rss');
 const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
+const { HtmlBasePlugin } = require('@11ty/eleventy');
 
 /* Filters */
 const dateFilter = require('./src/filters/date-filter.js');
@@ -38,6 +39,15 @@ module.exports = (eleventyConfig) => {
   eleventyConfig.addNunjucksFilter('limit', (arr, limit) =>
     arr.slice(0, limit)
   );
+  eleventyConfig.addFilter('constructID', (relative_url, base, fragment) => {
+    var u = new URL(
+      HtmlBasePlugin.applyBaseToUrl(fragment, base, {
+        pathPrefix: eleventyConfig.pathPrefix,
+        pageUrl: relative_url,
+      })
+    );
+    return u.href;
+  });
 
   /**
    * Shortcodes

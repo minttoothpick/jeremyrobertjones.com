@@ -51,4 +51,37 @@
 
 <meta property="fb:app_id" content="1108969113895287">
 
-<script type="application/ld+json">{{ schemaorg | dump("\t") | safe }}</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": '{{ "/" | constructID(site.url, "#website") }}',
+      "name": "Jeremy Robert Jones",
+      "description": "Hi, I’m Jeremy. I build things on the web and share what I learn on my blog.",
+      "url": "https://jeremyrobertjones.com",
+      "publisher": {
+        "@type": "Person",
+        "@id": "https://jeremyrobertjones.com/#person_jeremy_robert_jones"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://jeremyrobertjones.com/#person_jeremy_robert_jones",
+      "name": "Jeremy Robert Jones",
+      "url": "https://jeremyrobertjones.com",
+      "givenName": "Jeremy",
+      "familyName": "Jones",
+      "jobTitle": "Web Developer",
+      "sameAs": [
+        "https://github.com/minttoothpick",
+        "https://pixelfed.social/minttoothpick",
+        "https://bsky.app/profile/minttoothpick.bsky.social",
+        "https://mastodon.social/@minttoothpick",
+        "https://www.linkedin.com/in/jeremy-robert-jones/"
+      ]
+    }
+  ]
+}
+</script>
