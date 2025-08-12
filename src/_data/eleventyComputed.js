@@ -2,7 +2,7 @@ module.exports = {
   schemaorg: (data) => {
     const website = {
       '@type': 'WebSite',
-      '@id': `${data.site.url}#website`,
+      '@id': `${data.site.url}/#website`,
       name: data.site.name,
       description: data.site.desc,
       url: data.site.url,
