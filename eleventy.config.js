@@ -12,7 +12,7 @@ import imageSingle from './src/shortcodes/imageSingle.js';
 /* Data */
 import resume from './src/_data/resumeConfig.js';
 
-export default function (eleventyConfig) {
+export default async function (eleventyConfig) {
   /**
    * Collections
    */
@@ -58,14 +58,14 @@ export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({
     [resume.sourcePath]: resume.publicPath,
   });
-
-  return {
-    markdownTemplateEngine: 'njk',
-    dataTemplateEngine: 'njk',
-    htmlTemplateEngine: 'njk',
-    dir: {
-      input: 'src',
-      output: 'dist',
-    },
-  };
 }
+
+export const config = {
+  templateFormats: ['md', 'njk', 'html', 'liquid', '11ty.js'],
+  markdownTemplateEngine: 'njk',
+  htmlTemplateEngine: 'njk',
+  dir: {
+    input: 'src',
+    output: 'dist',
+  },
+};

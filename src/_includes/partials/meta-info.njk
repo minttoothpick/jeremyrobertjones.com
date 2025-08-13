@@ -1,16 +1,16 @@
-{% if meta.title %}
+{% if metadata.title %}
   {% set pageTitle = metaTitle %}
-{% elif site.name === title %}
+{% elif metadata.title === title %}
   {% set pageTitle = title %}
 {% else %}
-  {% set pageTitle = title + ' • ' + site.name %}
+  {% set pageTitle = title + ' • ' + metadata.title %}
 {% endif %}
 
-{% set currentUrl = site.url + page.url %}
+{% set currentUrl = metadata.url + page.url %}
 
-{% set pageDesc = meta.desc or summary or site.desc %}
+{% set pageDesc = metadata.description or summary or metadata.description %}
 
-{% set pageImage = meta.imageSrc or site.socialImage %}
+{% set pageImage = metadata.imageSrc or metadata.socialImage %}
 
 <title>{{ pageTitle }}</title>
 
@@ -20,33 +20,35 @@
 
 <link rel="canonical" href="{{ currentUrl }}">
 <link rel="webmention" href="https://webmention.io/jeremyrobertjones.com/webmention">
-<meta name="author" content="{{ site.authorName }}">
+<meta name="author" content="{{ metadata.authorName }}">
 <meta name="description" content="{{ pageDesc }}">
-<meta name="generator" content="11ty">
+<meta name="generator" content="{{ eleventy.generator }}">
 
 <!-- Open Graph -->
 <meta property="og:type" content="website">
-<meta property="og:locale" content="{{ site.locale }}">
-<meta property="og:site_name" content="{{ site.name }}">
+<meta property="og:locale" content="{{ metadata.locale }}">
+<meta property="og:site_name" content="{{ metadata.title }}">
 <meta property="og:title" content="{{ pageTitle }}">
 <meta property="og:url" content="{{ currentUrl }}">
 <meta property="og:description" content="{{ pageDesc }}">
 {% if pageImage %}
   <meta property="og:image" content="https://jeremyrobertjones.com/images/social/{{ pageImage }}">
-  <meta name="og:image:alt" content="{{ meta.imageAlt or site.socialImageAlt }}">
-  <meta property="og:image:width" content="{{ meta.imageWidth or 1200 }}">
-  <meta property="og:image:height" content="{{ meta.imageHeight or 630 }}">
+  <meta name="og:image:alt" content="{{ metadata.imageAlt or metadata.socialImageAlt }}">
+  <meta property="og:image:width" content="{{ metadata.imageWidth or 1200 }}">
+  <meta property="og:image:height" content="{{ metadata.imageHeight or 630 }}">
 {% endif %}
 
 <!-- Twitter card -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:site" content="{{ site.twitter }}">
-<meta name="twitter:creator" content="{{ site.twitter }}">
+<meta name="twitter:site" content="{{ metadata.twitter }}">
+<meta name="twitter:creator" content="{{ metadata.twitter }}">
 <meta name="twitter:title" content="{{ pageTitle }}">
 <meta name="twitter:description" content="{{ pageDesc }}">
 {% if pageImage %}
   <meta name="twitter:image" content="https://jeremyrobertjones.com/images/social/{{ pageImage }}">
-  <meta name="twitter:image:alt" content="{{ meta.imageAlt or site.socialImageAlt }}">
+  <meta name="twitter:image:alt" content="{{ metadata.imageAlt or metadata.socialImageAlt }}">
 {% endif %}
 
 <meta property="fb:app_id" content="1108969113895287">
+
+<script type="application/ld+json">{{ schemaorg | dump('\t') | safe }}</script>
