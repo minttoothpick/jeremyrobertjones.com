@@ -29,6 +29,7 @@ module.exports = (eleventyConfig) => {
    */
   eleventyConfig.addPlugin(syntaxHighlight);
   eleventyConfig.addPlugin(rssPlugin);
+  eleventyConfig.addPlugin(HtmlBasePlugin);
 
   /**
    * Filters
@@ -40,13 +41,13 @@ module.exports = (eleventyConfig) => {
     arr.slice(0, limit)
   );
   eleventyConfig.addFilter('constructID', (relative_url, base, fragment) => {
-    var u = new URL(
+    var url = new URL(
       HtmlBasePlugin.applyBaseToUrl(fragment, base, {
         pathPrefix: eleventyConfig.pathPrefix,
         pageUrl: relative_url,
       })
     );
-    return u.href;
+    return url.href;
   });
 
   /**

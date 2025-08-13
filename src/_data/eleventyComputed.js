@@ -1,4 +1,17 @@
-// _data/eleventyComputed.js
+const { URL } = require('url');
+
+function constructID(relativeUrl, base, fragment) {
+  const baseUrl = new URL(base);
+  let relative = relativeUrl.startsWith('/')
+    ? relativeUrl.slice(1)
+    : relativeUrl;
+  let fullUrl = new URL(relative, baseUrl);
+  if (fragment) {
+    fullUrl.hash = fragment;
+  }
+  return fullUrl.href;
+}
+
 module.exports = {
   schemaorg: (data) => ({
     '@context': 'https://schema.org',
@@ -30,6 +43,21 @@ module.exports = {
           'https://mastodon.social/@minttoothpick',
           'https://www.linkedin.com/in/jeremy-robert-jones/',
         ],
+      },
+      {
+        '@type': 'WebPage',
+        '@id': constructID(data.page.url, data.site.url, '#webpage'),
+        name: data.title || data.site.name,
+        description: data.meta?.desc || data.site.desc,
+        url: constructID(data.page.url, data.site.url),
+        isPartOf: {
+          '@type': 'WebSite',
+          '@id': `${data.site.url}/#website`,
+        },
+        author: {
+          '@type': 'Person',
+          '@id': `${data.site.url}/#person_jeremy_robert_jones`,
+        },
       },
     ],
   }),
