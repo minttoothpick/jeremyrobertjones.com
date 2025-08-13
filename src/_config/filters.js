@@ -5,7 +5,7 @@ export default function (eleventyConfig) {
   eleventyConfig.addFilter('constructID', (relative_url, base, fragment) => {
     var u = new URL(
       HtmlBasePlugin.applyBaseToUrl(fragment, base, {
-        pathPrefix: eleventyConfig.pathPrefix,
+        pathPrefix: eleventyConfig.pathPrefix || '',
         pageUrl: relative_url,
       })
     );
