@@ -8,8 +8,6 @@ permalink: 'blog{% if pagination.pageNumber > 0 %}/page/{{ pagination.pageNumber
 paginationPrevText: 'Newer posts'
 paginationNextText: 'Older posts'
 paginationAnchor: '#post-list'
-meta:
-  desc: 'TODO: Blog page description'
 ---
 
 Thinking, learning, and sharing.
