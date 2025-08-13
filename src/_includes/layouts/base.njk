@@ -12,10 +12,9 @@
     {% include "partials/lazysizes.njk" %}
   {% endif %}
   {% include "partials/meta-info.njk" %}
-  <link rel="alternate" type="application/rss+xml" href="{{ site.url }}/feed.xml">
+  <link rel="alternate" type="application/rss+xml" href="{{ metadata.url }}/feed.xml">
 </head>
 <body class="flow">
-  <p><pre>{{ schemaorg | dump('\t') }}</pre></p>
   {% include "partials/site-head.njk" %}
   <main tabindex="-1" id="main-content">{% block content %}{% endblock %}</main>
 

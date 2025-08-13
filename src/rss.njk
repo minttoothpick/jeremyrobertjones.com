@@ -7,16 +7,16 @@ permalink: '/feed.xml'
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>{{ title }}</title>
 	<subtitle>{{ summary }}</subtitle>
-	<link href="{{ site.url }}{{ permalink }}" rel="self"/>
-	<link href="{{ site.url }}/"/>
+	<link href="{{ metadata.url }}{{ permalink }}" rel="self"/>
+	<link href="{{ metadata.url }}/"/>
 	<updated>{{ collections.blog | getNewestCollectionItemDate | dateToRfc3339 }}</updated>
-	<id>{{ site.url }}</id>
+	<id>{{ metadata.url }}</id>
 	<author>
-    <name>{{ site.authorName }}</name>
-    <email>{{ site.authorEmail }}</email>
+    <name>{{ metadata.authorName }}</name>
+    <email>{{ metadata.authorEmail }}</email>
 	</author>
 	{% for post in collections.blog %}
-    {% set absolutePostUrl %}{{ site.url }}{{ post.url | url }}{% endset %}
+    {% set absolutePostUrl %}{{ metadata.url }}{{ post.url | url }}{% endset %}
     <entry>
       <title>{{ post.data.title }}</title>
       <link href="{{ absolutePostUrl }}"/>
