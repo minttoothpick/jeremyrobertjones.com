@@ -3,9 +3,7 @@ import rssPlugin from '@11ty/eleventy-plugin-rss';
 import syntaxHighlight from '@11ty/eleventy-plugin-syntaxhighlight';
 
 /* Filters */
-import dateFilter from './src/filters/date-filter.js';
-import dateFilterW3 from './src/filters/date-filter-w3.js';
-import endsWith from './src/filters/ends-with.js';
+import pluginFilters from './src/_config/filters.js';
 
 /* Shortcodes */
 import imageRow from './src/shortcodes/imageRow.js';
@@ -31,12 +29,7 @@ export default function (eleventyConfig) {
   /**
    * Filters
    */
-  eleventyConfig.addFilter('dateFilter', dateFilter);
-  eleventyConfig.addFilter('dateFilterW3', dateFilterW3);
-  eleventyConfig.addFilter('endsWith', endsWith);
-  eleventyConfig.addNunjucksFilter('limit', (arr, limit) =>
-    arr.slice(0, limit)
-  );
+  eleventyConfig.addPlugin(pluginFilters);
 
   /**
    * Shortcodes
