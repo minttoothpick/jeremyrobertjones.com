@@ -1,24 +1,23 @@
 /* Plugins */
-const rssPlugin = require('@11ty/eleventy-plugin-rss');
-const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
+import rssPlugin from '@11ty/eleventy-plugin-rss';
+import syntaxHighlight from '@11ty/eleventy-plugin-syntaxhighlight';
 
 /* Filters */
-const dateFilter = require('./src/filters/date-filter.js');
-const dateFilterW3 = require('./src/filters/date-filter-w3.js');
-const endsWith = require('./src/filters/ends-with.js');
+import dateFilter from './src/filters/date-filter.js';
+import dateFilterW3 from './src/filters/date-filter-w3.js';
+import endsWith from './src/filters/ends-with.js';
 
 /* Shortcodes */
-const imageRow = require('./src/shortcodes/imageRow');
-const imageSingle = require('./src/shortcodes/imageSingle.js');
+import imageRow from './src/shortcodes/imageRow.js';
+import imageSingle from './src/shortcodes/imageSingle.js';
 
 /* Data */
-const resume = require('./src/_data/resumeConfig');
+import resume from './src/_data/resumeConfig.js';
 
-module.exports = (eleventyConfig) => {
+export default function (eleventyConfig) {
   /**
    * Collections
    */
-  // Returns a collection of blog posts in reverse date order
   eleventyConfig.addCollection('blog', (collection) => {
     return [...collection.getFilteredByGlob('./src/blog/*.md')].reverse();
   });
@@ -49,7 +48,6 @@ module.exports = (eleventyConfig) => {
    * Drafts
    * https://www.11ty.dev/docs/config-preprocessors/#example-drafts
    */
-
   eleventyConfig.addPreprocessor('drafts', '*', (data, content) => {
     if (data.draft && process.env.ELEVENTY_ENV === 'prod') {
       return false;
@@ -59,7 +57,6 @@ module.exports = (eleventyConfig) => {
   /**
    * Misc.
    */
-
   eleventyConfig.addPassthroughCopy('src/css');
   eleventyConfig.addPassthroughCopy('src/images');
   eleventyConfig.addPassthroughCopy({
@@ -78,4 +75,4 @@ module.exports = (eleventyConfig) => {
       output: 'dist',
     },
   };
-};
+}

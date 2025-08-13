@@ -1,6 +1,6 @@
-const moment = require('moment');
+import moment from 'moment';
 
-module.exports = (value) => {
+export default (value) => {
   // "15th of June 2025"
   // const dateObject = moment(value);
   // return `${dateObject.format('Do')} of ${dateObject.format('MMMM YYYY')}`;

@@ -1,7 +1,7 @@
-const path = require('path');
-const Image = require('@11ty/eleventy-img');
+import path from 'path';
+import Image from '@11ty/eleventy-img';
 
-module.exports = async function imageRow(images, caption = '') {
+export default async function imageRow(images, caption = '') {
   const srcDir = 'src/images/';
   const outputDir = 'dist/images/';
   const imgUrlPath = '/images/';
@@ -74,4 +74,4 @@ module.exports = async function imageRow(images, caption = '') {
     console.error('Error processing image row: ', error);
     return `<div class="error">Image could not be displayed.</div>`;
   }
-};
+}

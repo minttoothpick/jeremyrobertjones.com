@@ -2,6 +2,7 @@
   "name": "jeremyrobertjones.com",
   "version": "1.0.0",
   "description": "Hi 👋",
+  "type": "module",
   "scripts": {
     "prod": "ELEVENTY_ENV=prod npx eleventy",
     "dev": "ELEVENTY_ENV=dev npx eleventy --serve",

@@ -1,7 +1,7 @@
-const path = require('path');
-const Image = require('@11ty/eleventy-img');
+import path from 'path';
+import Image from '@11ty/eleventy-img';
 
-module.exports = async function imageSingle(
+export default async function imageSingle(
   image,
   imgClasses = 'post__feature-image',
   formats = ['avif', 'webp', 'png'],
@@ -65,4 +65,4 @@ module.exports = async function imageSingle(
     console.error('Error processing single image: ', error);
     return `<div class="error">Image could not be displayed.</div>`;
   }
-};
+}
