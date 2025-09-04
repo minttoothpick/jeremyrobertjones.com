@@ -20,6 +20,7 @@ permalink: '/feed.xml'
     <entry>
       <title>{{ post.data.title }}</title>
       <link href="{{ absolutePostUrl }}"/>
+      {% set postUpdated = post.data.editDate or post.date %}
       <updated>{{ post.date | dateToRfc3339 }}</updated>
       <id>{{ absolutePostUrl }}</id>
       <content type="html"><![CDATA[
