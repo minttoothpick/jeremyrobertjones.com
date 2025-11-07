@@ -1,4 +1,4 @@
 export default {
-  sourcePath: 'src/docs/Jeremy_Jones_Web_Manager_Resume.pdf',
-  publicPath: 'resume/Jeremy_Jones_Web_Manager_Resume.pdf',
+  sourcePath: 'src/docs/Jeremy-Jones-Resume.pdf',
+  publicPath: 'resume/Jeremy-Jones-Resume.pdf',
 };

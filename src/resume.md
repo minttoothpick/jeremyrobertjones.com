@@ -3,15 +3,15 @@ title: 'Resume'
 layout: layouts/resume
 skills:
   - 'Web Development':
-      - 'HTML, CSS, JavaScript, PHP, SQL, Git'
-  - 'Platforms':
-      - 'SharePoint, WordPress, Drupal, Salesforce Marketing Cloud'
+      - 'HTML, CSS, JavaScript, PHP, SQL, Git, Responsive Design, SEO (JSON-LD Schema, Metadata, Open Graph)'
   - 'Accessibility':
       - '508, WCAG, Certified Trusted Tester'
-  - 'Content Strategy':
-      - 'Web Governance, Content Audits, Information Architecture, Documentation'
-  - 'Analytics':
-      - 'Google Analytics, Looker Studio'
+  - 'Tools':
+      - 'Figma, Adobe Creative Suite, Jira'
+  - 'Content & Web Management':
+      - 'WordPress, Drupal, SharePoint, Salesforce Marketing Cloud, Writing & Editing, Quality Assurance'
+  - 'Analytics & Web Performance':
+      - 'Google Analytics, Looker Studio, Tag Manager, Search Console, Google PageSpeed Insights'
   - 'Automation':
       - 'Power Automate, UiPath, Python'
 education:
@@ -23,19 +23,20 @@ education:
 
 ## Profile
 
-I have a decade of experience managing large-scale websites for the US government, focusing on content strategy, accessibility, workflow automation, and cross-team collaboration. As a certified 508 Trusted Tester, I strive to make digital content usable, clear, and inclusive. I’m drawn to roles that bridge technical and editorial work: streamlining systems, leading redesigns, and helping teams communicate better. I'm driven by creating practical, user-focused solutions that make a meaningful impact.
+I’m a web manager, developer, and UX designer with over 10 years of experience supporting government and research platforms. I specialize in creating intuitive, accessible websites, collaborating across teams, and translating needs into high-impact content and interfaces. I combine visual design skills with front-end development and content strategy to deliver clear, user-centered digital experiences.
 
 ## Experience
 
-### Web Manager, <span style="font-weight: normal;">US Forest Service Research & Development</span>
+### Web Manager, <span style="font-weight: normal;">U.S. Forest Service Research & Development</span>
 
-2015 – Present &nbsp;|&nbsp; Remote
+Nov 2015 – Sep 2025 &nbsp;|&nbsp; Remote
 
-- Manage regional research station websites (Drupal, WordPress, SharePoint), ensuring usability, accessibility, and compliance.
-- Lead full website redesigns—from IA and content audits to responsive design, coding, and testing.
-- Run discovery sessions across teams to inform site structure and strategy—aligning user needs with agency goals.
-- Create strategic documentation and train contributors on content standards, governance, and workflows to support scalable publishing.
-- Perform accessibility testing and remediation for web, multimedia, and PDF assets.
-- Use Google Analytics and Looker Studio to track engagement, guide content decisions and social media strategy, and deliver dashboards for science communication and leadership teams.
-- Develop automation solutions to streamline content submission, data collection, reporting, and legacy content migration—reducing errors and saving time.
-- Build custom tools and features with HTML, CSS, JavaScript, and PHP—like citation generators, image galleries, and WordPress themes—to help researchers share their work and make content easier to navigate.
+- Managed and updated research station websites, serving as quality control and editor for all public-facing content.
+- Led full-scale redesign projects, including planning information architecture with clients, designing wireframes, and developing responsive websites and UI components using HTML, CSS, JavaScript, and PHP.
+- Developed custom WordPress themes and managed site plugins, updates, and backups.
+- Ensured Section 508 & WCAG accessibility compliance of web interfaces and content through regular audits and remediation.
+- Used Google Analytics to monitor content performance and user activity, inform strategy, and report results to leadership. Increased newsletter signups by 20% and reduced broken links by 50% through redesigns and audits.
+- Monitored site performance using Google PageSpeed Insights to identify issues and optimize asset loading.
+- Collaborated with content creators, editors, designers, and developers to ensure content accuracy, usability, consistency, and alignment with brand standards.
+- Created design specifications, accessibility checklists, and other documentation to support quality assurance and best practices for all contributors.
+- Tested content to improve search engine optimization, including creating meta tags, JSON-LD schema, structured data, and monitoring Google Search Console.
