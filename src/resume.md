@@ -22,7 +22,7 @@ certification:
       - 'Department of Homeland Security, 2023'
 ---
 
-## Profile
+<!-- ## Profile -->
 
 I’m a web manager, front-end developer, and certified Section 508 Trusted Tester with more than 10 years of experience supporting federal, education, ecommerce, and public-facing websites. My work combines accessible web development, CMS administration, content strategy, quality assurance, analytics, and user-centered design. I’m especially experienced in organizing complex information, improving publishing workflows, and creating clear, usable digital experiences.
 
