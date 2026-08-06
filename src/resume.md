@@ -3,40 +3,47 @@ title: 'Resume'
 layout: layouts/resume
 skills:
   - 'Web Development':
-      - 'HTML, CSS, JavaScript, PHP, SQL, Git, Responsive Design, SEO (JSON-LD Schema, Metadata, Open Graph)'
+      - 'HTML, CSS, JavaScript, PHP, Liquid, Git, Responsive Design, SEO'
   - 'Accessibility':
-      - '508, WCAG, Certified Trusted Tester'
-  - 'Tools':
-      - 'Figma, Adobe Creative Suite, Jira'
+      - 'Section 508, WCAG, ADA, Manual Accessibility Testing, Keyboard and Screen Reader Testing, PDF Remediation'
+  - 'Design':
+      - 'Penpot, Adobe Creative Suite, Information Architecture, Wireframing, Responsive Interface Design'
   - 'Content & Web Management':
-      - 'WordPress, Drupal, SharePoint, Salesforce Marketing Cloud, Writing & Editing, Quality Assurance'
+      - 'WordPress, Drupal, SharePoint, Shopify, Smart Sites CMS, Writing and Editing, Quality Assurance'
   - 'Analytics & Web Performance':
-      - 'Google Analytics, Looker Studio, Tag Manager, Search Console, Google PageSpeed Insights'
-  - 'Automation':
-      - 'Power Automate, UiPath, Python'
+      - 'Google Analytics 4, Google Tag Manager, Data Studio, Search Console, Search.gov, PageSpeed Insights'
+#   - 'Automation':
+#       - 'Power Automate, UiPath, Python'
 education:
   - 'Asheville-Buncombe Technical Community College':
       - 'A.A.S. in Digital Media; Certificate in Mobile Development'
-  - 'Section 508 Trusted Tester':
-      - 'Department of Homeland Security'
+certification:
+  - 'DHS Section 508 Trusted Tester':
+      - 'Department of Homeland Security, 2023'
 ---
 
 ## Profile
 
-I’m a web manager, developer, and UX designer with over 10 years of experience supporting government and research platforms. I specialize in creating intuitive, accessible websites, collaborating across teams, and translating needs into high-impact content and interfaces. I combine visual design skills with front-end development and content strategy to deliver clear, user-centered digital experiences.
+I’m a web manager, front-end developer, and certified Section 508 Trusted Tester with more than 10 years of experience supporting federal, education, ecommerce, and public-facing websites. My work combines accessible web development, CMS administration, content strategy, quality assurance, analytics, and user-centered design. I’m especially experienced in organizing complex information, improving publishing workflows, and creating clear, usable digital experiences.
 
 ## Experience
+
+### Web Accessibility, Development & QA Consultant, <span style="font-weight: normal;">Freelance</span>
+
+Sep 2025 – Present &nbsp;|&nbsp; Remote
+
+- Audited and improved public education websites for accessibility, usability, content accuracy, and ADA Title II readiness, including converting PDF content into accessible HTML.
+- Compared website information against official catalogs, spreadsheets, policies, and fee schedules; documented discrepancies and coordinated corrections with administrators and content owners.
+- Designed reusable CMS components and built and maintained responsive Shopify and WordPress websites.
+- Remediated accessibility issues, tested completed fixes, and implemented analytics reporting for traffic, searches, downloads, engagement, and key user paths.
 
 ### Web Manager, <span style="font-weight: normal;">U.S. Forest Service Research & Development</span>
 
 Nov 2015 – Sep 2025 &nbsp;|&nbsp; Remote
 
-- Managed and updated research station websites, serving as quality control and editor for all public-facing content.
-- Led full-scale redesign projects, including planning information architecture with clients, designing wireframes, and developing responsive websites and UI components using HTML, CSS, JavaScript, and PHP.
-- Developed custom WordPress themes and managed site plugins, updates, and backups.
-- Ensured Section 508 & WCAG accessibility compliance of web interfaces and content through regular audits and remediation.
-- Used Google Analytics to monitor content performance and user activity, inform strategy, and report results to leadership. Increased newsletter signups by 20% and reduced broken links by 50% through redesigns and audits.
-- Monitored site performance using Google PageSpeed Insights to identify issues and optimize asset loading.
-- Collaborated with content creators, editors, designers, and developers to ensure content accuracy, usability, consistency, and alignment with brand standards.
-- Created design specifications, accessibility checklists, and other documentation to support quality assurance and best practices for all contributors.
-- Tested content to improve search engine optimization, including creating meta tags, JSON-LD schema, structured data, and monitoring Google Search Console.
+- Managed federal research websites and intranets, serving as developer, editor, quality-assurance lead, SharePoint administrator, and primary resource for content contributors.
+- Led redesigns from stakeholder interviews and information architecture through responsive development, content migration, testing, training, and launch.
+- Developed WordPress themes, web interfaces, forms, and reusable components using HTML, CSS, JavaScript, PHP, USWDS, and structured content.
+- Audited and remediated websites, documents, and multimedia for Section 508 and WCAG accessibility; created contributor guidance, checklists, and publishing standards.
+- Used analytics, search data, accessibility testing, link audits, and PageSpeed Insights to guide improvements, increasing newsletter subscriptions by 20% and reducing page-not-found errors by 50%.
+- Collaborated with researchers, leadership, communications staff, designers, developers, and content owners to publish accurate, understandable, and accessible scientific information.

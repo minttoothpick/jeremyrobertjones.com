@@ -8,6 +8,22 @@
   {# <link href="https://fonts.bunny.net/css?family=barlow:400,400i,700&display=swap" rel="stylesheet"> #}
   <link rel="stylesheet" href="/css/prism-tomorrow.css">
   <link rel="stylesheet" href="/css/style.css">
+  <style>
+  body {
+    background-image:
+      url('/images/homebg2light.svg'),
+      url('/images/homebg1.svg'),
+      url('/images/homebg1.svg'),
+      url('/images/homebg2light.svg');
+    background-repeat: no-repeat;
+    background-position:
+      top -10em left -10em,
+      top -10em right -10em,
+      top -10em left -10em,
+      top -10em right -10em;
+    {# background-size: clamp(400px, 90vw, 1000px); #}
+  }
+  </style>
   {% if scripts.lazysizes === true %}
     {% include "partials/lazysizes.njk" %}
   {% endif %}

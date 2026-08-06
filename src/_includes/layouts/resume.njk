@@ -1,9 +1,9 @@
 {% extends "layouts/base.njk" %}
 
 {% set pageHeaderTitle = title %}
-{% set pageHeaderSummary %}
+{# {% set pageHeaderSummary %}
   <p>You can <a href="Jeremy-Jones-Resume.pdf?v={{ cacheBusters.resumePdf }}">download a PDF version of my resume</a> if you prefer.</p>
-{% endset %}
+{% endset %} #}
 
 {% block content %}
   <style>
@@ -45,6 +45,15 @@
         <h2>Education</h2>
         {% for ed in education %}
           {% for key, values in ed %}
+            <h3>{{ key }}</h3>
+            {% for value in values %}
+              <p>{{ value }}</p>
+            {% endfor %}
+          {% endfor %}
+        {% endfor %}
+        <h2>Certification</h2>
+        {% for cert in certification %}
+          {% for key, values in cert %}
             <h3>{{ key }}</h3>
             {% for value in values %}
               <p>{{ value }}</p>
