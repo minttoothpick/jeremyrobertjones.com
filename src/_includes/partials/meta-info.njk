@@ -8,6 +8,10 @@
 
 {% set pageDesc = metadata.description or summary or metadata.description %}
 
+{% if page.url == "/" %}
+  {% set pageDesc = pageDesc + " #nobridge" %}
+{% endif %}
+
 {% set pageImage = metadata.imageSrc or metadata.socialImage %}
 
 <title>{{ pageTitle }}</title>
